@@ -4,7 +4,7 @@
   <title>DiGirolamo Knows</title>
   <link href="http://anthonydigirolamo.github.com/atom.xml" rel="self"/>
   <link href="http://anthonydigirolamo.github.com/"/>
-  <updated>2011-09-21T16:10:56-04:00</updated>
+  <updated>2011-09-21T16:35:10-04:00</updated>
   <id>http://anthonydigirolamo.github.com/</id>
   <author>
     <name>Anthony DiGirolamo</name>
@@ -13,11 +13,94 @@
 
   
   <entry>
+    <title>Octopress Category Listing</title>
+    <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing/"/>
+    <updated>2011-09-21T16:18:00-04:00</updated>
+    <id>http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing</id>
+    <content type="html">&lt;p&gt;While setting up my side bar for this site I wanted to easily list all
+categories on my site. Unfortunately, this is non-trivial from what I learned by
+skimming the, Octopress, Jekyll and Liquid docs. Fortunately, there is an easy
+fix. Here are the diffs of the changes I made:&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt; (category_generator.diff)&lt;/span&gt; &lt;a href=&#8217;http://anthonydigirolamo.github.com/downloads/code/category_generator.diff&#8217;&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+ &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;11&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;12&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;diff&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;diff &#8211;git a/plugins/category_generator.rb b/plugins/category_generator.rb&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;index d9357bc..49e9d40 100644&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gd&quot;&gt;&#8212; a/plugins/category_generator.rb&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/plugins/category_generator.rb&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gu&quot;&gt;@@ -106,6 +106,7 @@ module Jekyll&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     #
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     def category_links(categories)
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       dir = @context.registers[:site].config[&amp;#39;category_dir&amp;#39;]
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+      categories = categories.keys if categories.class == Hash&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       categories = categories.sort!.map do |item|
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;         &amp;quot;&amp;lt;a class=&amp;#39;category&amp;#39; href=&amp;#39;/#{dir}/#{item.gsub(/_|\P{Word}/, &amp;#39;-&amp;#39;).gsub(/-{2,}/, &amp;#39;-&amp;#39;).downcase}/&amp;#39;&amp;gt;#{item}&amp;lt;/
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       end
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt; (recent_posts.diff)&lt;/span&gt; &lt;a href=&#8217;http://anthonydigirolamo.github.com/downloads/code/recent_posts.diff&#8217;&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+ &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;11&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;12&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;13&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;14&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;15&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;16&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;diff&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;diff &#8211;git a/source/_includes/asides/recent_posts.html b/source/_includes/asides/recent_posts.html&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;index cc62814..b12f77c 100644&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gd&quot;&gt;&#8212; a/source/_includes/asides/recent_posts.html&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/source/_includes/asides/recent_posts.html&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gu&quot;&gt;@@ -1,4 +1,11 @@&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt; &amp;lt;section&amp;gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;h1&amp;gt;Categories&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;ul&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+    &amp;lt;li&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+      {{ site.categories | category_links }}&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+    &amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &amp;lt;h1&amp;gt;Recent Posts&amp;lt;/h1&amp;gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &amp;lt;ul id=&amp;quot;recent_posts&amp;quot;&amp;gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     {% for post in site.posts limit: site.recent_posts %}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;This allows the &lt;code&gt;category_links&lt;/code&gt; liquid filter to process the
+&lt;code&gt;site.categories&lt;/code&gt; hash. The line added to &lt;code&gt;category_generator.rb&lt;/code&gt; file gets
+the keys of &lt;code&gt;site.categories&lt;/code&gt; which corresponds to the names of every
+category.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>Anthony DiGirolamo&#8217;s Resume</title>
     <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/resume/"/>
     <updated>2011-09-21T14:19:00-04:00</updated>
     <id>http://anthonydigirolamo.github.com/blog/2011/09/21/resume</id>
-    <content type="html">&lt;p&gt;You may &lt;a href=&quot;http://anthonydigirolamo.github.com/assets/digirolamo_resume.pdf&quot;&gt;Download&lt;/a&gt; this as a PDF. Otherwise, read on!&lt;/p&gt;
+    <content type="html">&lt;p&gt;You may &lt;a href=&quot;http://anthonydigirolamo.github.com/downloads/digirolamo_resume.pdf&quot;&gt;Download&lt;/a&gt; this as a PDF. Otherwise, read on!&lt;/p&gt;
 
 &lt;h2&gt;Education&lt;/h2&gt;
 
