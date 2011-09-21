@@ -106,6 +106,7 @@ module Jekyll
     #
     def category_links(categories)
       dir = @context.registers[:site].config['category_dir']
+      categories = categories.keys if categories.class == Hash
       categories = categories.sort!.map do |item|
         "<a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{item}</a>"
       end
