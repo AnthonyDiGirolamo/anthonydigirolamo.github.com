@@ -1,4 +1,11 @@
 <section>
+  <h1>Categories</h1>
+  <ul>
+    <li>
+      {{ site.categories | category_links }}
+    </li>
+  </ul>
+
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     {% for post in site.posts limit: site.recent_posts %}
