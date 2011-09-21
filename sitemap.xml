@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://yoursite.com/blog/archives/</loc>
-        <lastmod>2011-09-21T13:22:35-04:00</lastmod>
+        <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure/</loc>
+        <lastmod>2011-09-21T13:53:12-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/</loc>
-        <lastmod>2011-09-21T13:22:35-04:00</lastmod>
+        <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/resume/</loc>
+        <lastmod>2011-09-21T16:01:47-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://anthonydigirolamo.github.com/blog/archives/</loc>
+        <lastmod>2011-09-21T16:01:47-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://anthonydigirolamo.github.com/</loc>
+        <lastmod>2011-09-21T16:01:47-04:00</lastmod>
     </url>
 </urlset>

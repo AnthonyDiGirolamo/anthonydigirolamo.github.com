@@ -1,15 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title>My Octopress Blog</title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2011-09-21T13:28:29-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <title>DiGirolamo Knows</title>
+  <link href="http://anthonydigirolamo.github.com/atom.xml" rel="self"/>
+  <link href="http://anthonydigirolamo.github.com/"/>
+  <updated>2011-09-21T16:01:54-04:00</updated>
+  <id>http://anthonydigirolamo.github.com/</id>
   <author>
-    <name>Your Name</name>
+    <name>Anthony DiGirolamo</name>
     
   </author>
 
+  
+  <entry>
+    <title>Anthony DiGirolamo&#8217;s Resume</title>
+    <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/resume/"/>
+    <updated>2011-09-21T14:19:00-04:00</updated>
+    <id>http://anthonydigirolamo.github.com/blog/2011/09/21/resume</id>
+    <content type="html">&lt;p&gt;You may &lt;a href=&quot;http://anthonydigirolamo.github.com/assets/digirolamo_resume.pdf&quot;&gt;Download&lt;/a&gt; this as a PDF. Otherwise, read on!&lt;/p&gt;
+
+&lt;h2&gt;Education&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;span style=&quot;float:right;&quot;&gt;GPA: 3.80&lt;/span&gt; Masters of Science in Computer Science &amp;#8211; In progress&lt;br/&gt;
+Ira A. Fulton School of Engineering, Arizona State University &amp;#8211; Tempe, Arizona&lt;br/&gt;
+20 credit hours completed&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span style=&quot;float:right;&quot;&gt;GPA: 3.38&lt;/span&gt; Bachelor of Science in Computer Science &amp;#8211; Completed 12/2006&lt;br/&gt;
+Ira A. Fulton School of Engineering, Arizona State University &amp;#8211; Tempe, Arizona&lt;br/&gt;
+138 credit hours completed&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Technical Skills&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Parallel application development in C and Fortran using MPI and OpenMP. Cloud
+application development using Java and the Apache Hadoop project. Additional
+Languages: Ruby, Python, and C++.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Web application development with Ruby on Rails, JavaScript, CSS, and SQL
+including production level deployment with Linux, Apache, nginx, MySQL,
+PostgreSQL, Subversion, and Git.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Comfortable with clustered Linux systems including shell scripting, the Torque
+resource manager, the Moab scheduler, and InfiniBand networking.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Work Experience&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Technical Support Analyst Senior, High Performance Computing Initiative&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;06/2010 &amp;#8211; Present&lt;/span&gt;
+Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Administered the Saguaro High Performance Computing (HPC) system
+which ranked 160 in the Top 500 Supercomputer Sites as of June 2009.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Communicated with end users to provide application configuration,
+installation, testing, and deployment.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Developed and delivered instructional short courses on parallel
+programming using the Message Passing Interface (MPI) on the Saguaro HPC
+system.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Supported the day to day operations using technologies such as: Moab,
+Torque, the Gold Allocation System, Request Tracker, CFEngine, System Imager,
+FlexLM, and building custom RPMs from source installs.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Interfaced with software and hardware vendors for upgrades and
+maintenance.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Application Developer, Integrum Technologies LLC&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;01/2010 &amp;#8211; 06/2010&lt;/span&gt;
+260 South Arizona Avenue &amp;#8211; Chandler, Arizona&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Designed, developed, and tested web applications using the Ruby
+on Rails framework.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Worked directly with clients daily using SCRUM and Agile
+techniques to ensure a high amount of communication, fast turn around
+times, and thoroughly tested code.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Performed a heavy amount of integration testing using Cucumber.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Followed Test Driven Development methodologies in a pair-programming
+environment with an emphasis on continuous refactoring.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Deployed production applications using technologies such as: MySQL,
+PostgreSQL, NGINX, Apache, Postfix, and Phusion Passenger.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Research Assistant, High Performance Computing Initiative&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;2/2006 &amp;#8211; 4/2008, 8/2008 &amp;#8211; 12/2009&lt;/span&gt;
+Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Designed and built GDBase, an off-line framework for debugging MPI
+applications. It provides a method for users to define debugger behavior,
+collect results to a database, and analyze the information postmortem.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Assisted Saguaro users with MPI application development, debugging, profiling,
+and error diagnosis.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Trained users in MPI introduction short courses that covered data
+decomposition, MPI data types, check-pointing with MPI/IO, and debugging using
+the GNU Debugger (GDB) and GDBase.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Streamlined error detection on Saguaro using a set of scripts to control job
+scheduling. If errors are found on a machine, staff members are notified, and
+jobs are then rescheduled to error free machines with no intervention.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Developed ASULinx, a prototype Ruby on Rails social networking tool designed
+to highlight interdisciplinary relationships and collaborative research in a
+graphical manner.  (asulinx.asu.edu})&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Subject Matter Expert, Lionbridge Technologies&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;7/2009&lt;/span&gt;
+Microsoft &amp;#8211; Redmond, Washington&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Authored and revised questions for the Microsoft HPC 2008
+  certification exam.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Developer, Office of the Vice President for Global Engagement&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;7/2008 &amp;#8211; 11/2008&lt;/span&gt;
+Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Updated ASULinx to fit the needs of the Global Engagement Department.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Collaborated with a design company (Esser Design) on integrating new artwork.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Graduate Student Intern, HPC-3 Department&lt;/strong&gt;&lt;br/&gt;
+&lt;span style=&quot;float:right;&quot;&gt;5/2008 &amp;#8211; 7/2008&lt;/span&gt;
+Los Alamos National Laboratory (LANL) &amp;#8211; Los Alamos, New Mexico&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Worked towards porting the Stack Trace Analysis Tool (STAT) for use on the
+high performance computing (HPC) systems at LANL.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Collaborated with developers at Los Alamos National Laboratory and Lawrence
+Livermore National Laboratory on the Development of STAT.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Publications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;#8220;Architecture for an Offline Parallel Debugger&amp;#8221; IEEE International Symposium
+on Parallel and Distributed Processing with Applications (ISPA), 12/2008.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;#8220;A Scalable Framework for Offline Parallel Debugging&amp;#8221; 9th Linux Cluster
+Institute (LCI) International Conference on High-Performance Clustered
+Computing, 4/2008.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>./configure &#8211;prefix=$HOME</title>
+    <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure/"/>
+    <updated>2011-09-21T13:39:00-04:00</updated>
+    <id>http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure</id>
+    <content type="html">&lt;p&gt;Hello world, I am a software engineer working in High Performance Computing.
+Currently I am with the &lt;a href=&quot;http://www.olcf.ornl.gov/&quot;&gt;OLCF&lt;/a&gt; working as their
+Software Czar. Thats the fancy name for the person who decides what software
+will be installed center-wide and gets things done. The OLCF is the name given
+to the department responsible for marinating all supercomputers a Oak Ridge
+National Laboratory (ORNL). It&amp;#8217;s the most recent name chosen, previously known
+as &lt;a href=&quot;http://www.nccs.gov/&quot;&gt;NCCS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My background is Computer Science, for details please see my resume. Recently,
+I&amp;#8217;ve taken a liking to hardware design and construction. Most of my posts here
+will cover that topic.&lt;/p&gt;
+
+&lt;p&gt;Thanks for stopping by!&lt;/p&gt;
+</content>
+  </entry>
   
 </feed>
