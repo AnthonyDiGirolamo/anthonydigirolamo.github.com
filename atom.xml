@@ -4,7 +4,7 @@
   <title>DiGirolamo Knows</title>
   <link href="http://anthonydigirolamo.github.com/atom.xml" rel="self"/>
   <link href="http://anthonydigirolamo.github.com/"/>
-  <updated>2011-09-21T16:35:10-04:00</updated>
+  <updated>2011-09-22T14:56:56-04:00</updated>
   <id>http://anthonydigirolamo.github.com/</id>
   <author>
     <name>Anthony DiGirolamo</name>
@@ -18,8 +18,8 @@
     <updated>2011-09-21T16:18:00-04:00</updated>
     <id>http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing</id>
     <content type="html">&lt;p&gt;While setting up my side bar for this site I wanted to easily list all
-categories on my site. Unfortunately, this is non-trivial from what I learned by
-skimming the, Octopress, Jekyll and Liquid docs. Fortunately, there is an easy
+categories from all posts. Unfortunately, this is non-trivial from what I learned by
+skimming the Octopress, Jekyll, and Liquid docs. Fortunately, there is an easy
 fix. Here are the diffs of the changes I made:&lt;/p&gt;
 
 &lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt; (category_generator.diff)&lt;/span&gt; &lt;a href=&#8217;http://anthonydigirolamo.github.com/downloads/code/category_generator.diff&#8217;&gt;download&lt;/a&gt;&lt;/figcaption&gt;
