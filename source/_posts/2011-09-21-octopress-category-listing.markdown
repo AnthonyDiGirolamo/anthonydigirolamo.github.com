@@ -7,8 +7,8 @@ categories: octopress
 ---
 
 While setting up my side bar for this site I wanted to easily list all
-categories on my site. Unfortunately, this is non-trivial from what I learned by
-skimming the, Octopress, Jekyll and Liquid docs. Fortunately, there is an easy
+categories from all posts. Unfortunately, this is non-trivial from what I learned by
+skimming the Octopress, Jekyll, and Liquid docs. Fortunately, there is an easy
 fix. Here are the diffs of the changes I made:
 
 {% include_code lang:diff category_generator.diff %}
