@@ -6,7 +6,9 @@ comments: true
 categories: resume
 ---
 
-You may [Download](/downloads/digirolamo_resume.pdf) this as a PDF. Otherwise, read on!
+You may also [Download](/downloads/digirolamo_resume.pdf) this as a PDF.
+
+<!-- more -->
 
 Education
 ---------

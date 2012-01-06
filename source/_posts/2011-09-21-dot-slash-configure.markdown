@@ -8,7 +8,7 @@ categories: front_matter
 
 Hello world, I am a software engineer working in High Performance Computing.
 Currently I am with the [OLCF](http://www.olcf.ornl.gov/) working as their
-Software Czar. Thats the fancy name for the person who decides what software
+Software Czar. That's the fancy name for the person who decides what software
 will be installed center-wide and gets things done. The OLCF is the name given
 to the department responsible for marinating all supercomputers a Oak Ridge
 National Laboratory (ORNL). It's the most recent name chosen, previously known
