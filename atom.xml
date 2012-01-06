@@ -1,253 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title>DiGirolamo Knows</title>
+  <title><![CDATA[DiGirolamo Knows]]></title>
   <link href="http://anthonydigirolamo.github.com/atom.xml" rel="self"/>
   <link href="http://anthonydigirolamo.github.com/"/>
-  <updated>2011-09-22T15:02:17-04:00</updated>
+  <updated>2012-01-06T14:05:30-05:00</updated>
   <id>http://anthonydigirolamo.github.com/</id>
   <author>
-    <name>Anthony DiGirolamo</name>
+    <name><![CDATA[Anthony DiGirolamo]]></name>
     
   </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title>Octopress Category Listing</title>
+    <title type="html"><![CDATA[Octopress Category Listing]]></title>
     <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing/"/>
     <updated>2011-09-21T16:18:00-04:00</updated>
     <id>http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing</id>
-    <content type="html">&lt;p&gt;While setting up my side bar for this site I wanted to easily list all
+    <content type="html"><![CDATA[<p>While setting up my side bar for this site I wanted to easily list all
 categories from all posts. Unfortunately, this is non-trivial from what I learned by
 skimming the Octopress, Jekyll, and Liquid docs. Fortunately, there is an easy
-fix. Here are the diffs of the changes I made:&lt;/p&gt;
+fix. Here are the diffs of the changes I made:</p>
 
-&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt; (category_generator.diff)&lt;/span&gt; &lt;a href=&#8217;http://anthonydigirolamo.github.com/downloads/code/category_generator.diff&#8217;&gt;download&lt;/a&gt;&lt;/figcaption&gt;
- &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;11&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;12&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;diff&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;diff &#8211;git a/plugins/category_generator.rb b/plugins/category_generator.rb&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;index d9357bc..49e9d40 100644&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gd&quot;&gt;&#8212; a/plugins/category_generator.rb&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/plugins/category_generator.rb&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gu&quot;&gt;@@ -106,6 +106,7 @@ module Jekyll&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     #
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     def category_links(categories)
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       dir = @context.registers[:site].config[&amp;#39;category_dir&amp;#39;]
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+      categories = categories.keys if categories.class == Hash&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       categories = categories.sort!.map do |item|
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;         &amp;quot;&amp;lt;a class=&amp;#39;category&amp;#39; href=&amp;#39;/#{dir}/#{item.gsub(/_|\P{Word}/, &amp;#39;-&amp;#39;).gsub(/-{2,}/, &amp;#39;-&amp;#39;).downcase}/&amp;#39;&amp;gt;#{item}&amp;lt;/
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;       end
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
-
-
+<figure class='code'><figcaption><span> (category_generator.diff)</span> <a href='http://anthonydigirolamo.github.com/downloads/code/category_generator.diff'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/plugins/category_generator.rb b/plugins/category_generator.rb</span>
+</span><span class='line'><span class="gh">index d9357bc..49e9d40 100644</span>
+</span><span class='line'><span class="gd">--- a/plugins/category_generator.rb</span>
+</span><span class='line'><span class="gi">+++ b/plugins/category_generator.rb</span>
+</span><span class='line'><span class="gu">@@ -106,6 +106,7 @@ module Jekyll</span>
+</span><span class='line'>     #
+</span><span class='line'>     def category_links(categories)
+</span><span class='line'>       dir = @context.registers[:site].config[&#39;category_dir&#39;]
+</span><span class='line'><span class="gi">+      categories = categories.keys if categories.class == Hash</span>
+</span><span class='line'>       categories = categories.sort!.map do |item|
+</span><span class='line'>         &quot;&lt;a class=&#39;category&#39; href=&#39;/#{dir}/#{item.gsub(/_|\P{Word}/, &#39;-&#39;).gsub(/-{2,}/, &#39;-&#39;).downcase}/&#39;&gt;#{item}&lt;/
+</span><span class='line'>       end
+</span></code></pre></td></tr></table></div></figure>
 
 
-&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt; (recent_posts.diff)&lt;/span&gt; &lt;a href=&#8217;http://anthonydigirolamo.github.com/downloads/code/recent_posts.diff&#8217;&gt;download&lt;/a&gt;&lt;/figcaption&gt;
- &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;11&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;12&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;13&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;14&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;15&lt;/span&gt;
-&lt;span class=&#8217;line-number&#8217;&gt;16&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;diff&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;diff &#8211;git a/source/_includes/asides/recent_posts.html b/source/_includes/asides/recent_posts.html&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gh&quot;&gt;index cc62814..b12f77c 100644&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gd&quot;&gt;&#8212; a/source/_includes/asides/recent_posts.html&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/source/_includes/asides/recent_posts.html&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gu&quot;&gt;@@ -1,4 +1,11 @@&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt; &amp;lt;section&amp;gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;h1&amp;gt;Categories&amp;lt;/h1&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;ul&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+    &amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+      {{ site.categories | category_links }}&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+    &amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+  &amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;gi&quot;&gt;+&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &amp;lt;h1&amp;gt;Recent Posts&amp;lt;/h1&amp;gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &amp;lt;ul id=&amp;quot;recent_posts&amp;quot;&amp;gt;
-&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;     {% for post in site.posts limit: site.recent_posts %}
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
 
 
-&lt;p&gt;This allows the &lt;code&gt;category_links&lt;/code&gt; liquid filter to process the
-&lt;code&gt;site.categories&lt;/code&gt; hash. The line added to &lt;code&gt;category_generator.rb&lt;/code&gt; file gets
-the keys of &lt;code&gt;site.categories&lt;/code&gt; which corresponds to the names of every
-category.&lt;/p&gt;
-</content>
+<figure class='code'><figcaption><span> (recent_posts.diff)</span> <a href='http://anthonydigirolamo.github.com/downloads/code/recent_posts.diff'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/source/_includes/asides/recent_posts.html b/source/_includes/asides/recent_posts.html</span>
+</span><span class='line'><span class="gh">index cc62814..b12f77c 100644</span>
+</span><span class='line'><span class="gd">--- a/source/_includes/asides/recent_posts.html</span>
+</span><span class='line'><span class="gi">+++ b/source/_includes/asides/recent_posts.html</span>
+</span><span class='line'><span class="gu">@@ -1,4 +1,11 @@</span>
+</span><span class='line'> &lt;section&gt;
+</span><span class='line'><span class="gi">+  &lt;h1&gt;Categories&lt;/h1&gt;</span>
+</span><span class='line'><span class="gi">+  &lt;ul&gt;</span>
+</span><span class='line'><span class="gi">+    &lt;li&gt;</span>
+</span><span class='line'><span class="gi">+      {{ site.categories | category_links }}</span>
+</span><span class='line'><span class="gi">+    &lt;/li&gt;</span>
+</span><span class='line'><span class="gi">+  &lt;/ul&gt;</span>
+</span><span class='line'><span class="gi">+</span>
+</span><span class='line'>   &lt;h1&gt;Recent Posts&lt;/h1&gt;
+</span><span class='line'>   &lt;ul id=&quot;recent_posts&quot;&gt;
+</span><span class='line'>     {% for post in site.posts limit: site.recent_posts %}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This allows the <code>category_links</code> liquid filter to process the
+<code>site.categories</code> hash. The line added to <code>category_generator.rb</code> file gets
+the keys of <code>site.categories</code> which corresponds to the names of every
+category.</p>
+]]></content>
   </entry>
   
   <entry>
-    <title>Anthony DiGirolamo&#8217;s Resume</title>
+    <title type="html"><![CDATA[Anthony DiGirolamo's Resume]]></title>
     <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/resume/"/>
     <updated>2011-09-21T14:19:00-04:00</updated>
     <id>http://anthonydigirolamo.github.com/blog/2011/09/21/resume</id>
-    <content type="html">&lt;p&gt;You may &lt;a href=&quot;http://anthonydigirolamo.github.com/downloads/digirolamo_resume.pdf&quot;&gt;Download&lt;/a&gt; this as a PDF. Otherwise, read on!&lt;/p&gt;
+    <content type="html"><![CDATA[<p>You may <a href="http://anthonydigirolamo.github.com/downloads/digirolamo_resume.pdf">Download</a> this as a PDF. Otherwise, read on!</p>
 
-&lt;h2&gt;Education&lt;/h2&gt;
+<h2>Education</h2>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;span style=&quot;float:right;&quot;&gt;GPA: 3.80&lt;/span&gt; Masters of Science in Computer Science &amp;#8211; In progress&lt;br/&gt;
-Ira A. Fulton School of Engineering, Arizona State University &amp;#8211; Tempe, Arizona&lt;br/&gt;
-20 credit hours completed&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;span style=&quot;float:right;&quot;&gt;GPA: 3.38&lt;/span&gt; Bachelor of Science in Computer Science &amp;#8211; Completed 12/2006&lt;br/&gt;
-Ira A. Fulton School of Engineering, Arizona State University &amp;#8211; Tempe, Arizona&lt;br/&gt;
-138 credit hours completed&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li><p><span style="float:right;">GPA: 3.80</span> Masters of Science in Computer Science &#8211; In progress<br/>
+Ira A. Fulton School of Engineering, Arizona State University &#8211; Tempe, Arizona<br/>
+20 credit hours completed</p></li>
+<li><p><span style="float:right;">GPA: 3.38</span> Bachelor of Science in Computer Science &#8211; Completed 12/2006<br/>
+Ira A. Fulton School of Engineering, Arizona State University &#8211; Tempe, Arizona<br/>
+138 credit hours completed</p></li>
+</ul>
 
 
-&lt;h2&gt;Technical Skills&lt;/h2&gt;
+<h2>Technical Skills</h2>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Parallel application development in C and Fortran using MPI and OpenMP. Cloud
+<ul>
+<li><p>Parallel application development in C and Fortran using MPI and OpenMP. Cloud
 application development using Java and the Apache Hadoop project. Additional
-Languages: Ruby, Python, and C++.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Web application development with Ruby on Rails, JavaScript, CSS, and SQL
+Languages: Ruby, Python, and C++.</p></li>
+<li><p>Web application development with Ruby on Rails, JavaScript, CSS, and SQL
 including production level deployment with Linux, Apache, nginx, MySQL,
-PostgreSQL, Subversion, and Git.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Comfortable with clustered Linux systems including shell scripting, the Torque
-resource manager, the Moab scheduler, and InfiniBand networking.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+PostgreSQL, Subversion, and Git.</p></li>
+<li><p>Comfortable with clustered Linux systems including shell scripting, the Torque
+resource manager, the Moab scheduler, and InfiniBand networking.</p></li>
+</ul>
 
 
-&lt;h2&gt;Work Experience&lt;/h2&gt;
+<h2>Work Experience</h2>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Technical Support Analyst Senior, High Performance Computing Initiative&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;06/2010 &amp;#8211; Present&lt;/span&gt;
-Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;
+<ul>
+<li><p><strong>Technical Support Analyst Senior, High Performance Computing Initiative</strong><br/>
+<span style="float:right;">06/2010 &#8211; Present</span>
+Arizona State University &#8211; Tempe, Arizona</p>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Administered the Saguaro High Performance Computing (HPC) system
-which ranked 160 in the Top 500 Supercomputer Sites as of June 2009.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Communicated with end users to provide application configuration,
-installation, testing, and deployment.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Developed and delivered instructional short courses on parallel
+<ul>
+<li><p>Administered the Saguaro High Performance Computing (HPC) system
+which ranked 160 in the Top 500 Supercomputer Sites as of June 2009.</p></li>
+<li><p>Communicated with end users to provide application configuration,
+installation, testing, and deployment.</p></li>
+<li><p>Developed and delivered instructional short courses on parallel
 programming using the Message Passing Interface (MPI) on the Saguaro HPC
-system.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Supported the day to day operations using technologies such as: Moab,
+system.</p></li>
+<li><p>Supported the day to day operations using technologies such as: Moab,
 Torque, the Gold Allocation System, Request Tracker, CFEngine, System Imager,
-FlexLM, and building custom RPMs from source installs.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Interfaced with software and hardware vendors for upgrades and
-maintenance.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Application Developer, Integrum Technologies LLC&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;01/2010 &amp;#8211; 06/2010&lt;/span&gt;
-260 South Arizona Avenue &amp;#8211; Chandler, Arizona&lt;/p&gt;
+FlexLM, and building custom RPMs from source installs.</p></li>
+<li><p>Interfaced with software and hardware vendors for upgrades and
+maintenance.</p></li>
+</ul>
+</li>
+<li><p><strong>Web Application Developer, Integrum Technologies LLC</strong><br/>
+<span style="float:right;">01/2010 &#8211; 06/2010</span>
+260 South Arizona Avenue &#8211; Chandler, Arizona</p>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Designed, developed, and tested web applications using the Ruby
-on Rails framework.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Worked directly with clients daily using SCRUM and Agile
+<ul>
+<li><p>Designed, developed, and tested web applications using the Ruby
+on Rails framework.</p></li>
+<li><p>Worked directly with clients daily using SCRUM and Agile
 techniques to ensure a high amount of communication, fast turn around
-times, and thoroughly tested code.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Performed a heavy amount of integration testing using Cucumber.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Followed Test Driven Development methodologies in a pair-programming
-environment with an emphasis on continuous refactoring.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Deployed production applications using technologies such as: MySQL,
-PostgreSQL, NGINX, Apache, Postfix, and Phusion Passenger.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Research Assistant, High Performance Computing Initiative&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;2/2006 &amp;#8211; 4/2008, 8/2008 &amp;#8211; 12/2009&lt;/span&gt;
-Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;
+times, and thoroughly tested code.</p></li>
+<li><p>Performed a heavy amount of integration testing using Cucumber.</p></li>
+<li><p>Followed Test Driven Development methodologies in a pair-programming
+environment with an emphasis on continuous refactoring.</p></li>
+<li><p>Deployed production applications using technologies such as: MySQL,
+PostgreSQL, NGINX, Apache, Postfix, and Phusion Passenger.</p></li>
+</ul>
+</li>
+<li><p><strong>Research Assistant, High Performance Computing Initiative</strong><br/>
+<span style="float:right;">2/2006 &#8211; 4/2008, 8/2008 &#8211; 12/2009</span>
+Arizona State University &#8211; Tempe, Arizona</p>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Designed and built GDBase, an off-line framework for debugging MPI
+<ul>
+<li><p>Designed and built GDBase, an off-line framework for debugging MPI
 applications. It provides a method for users to define debugger behavior,
-collect results to a database, and analyze the information postmortem.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Assisted Saguaro users with MPI application development, debugging, profiling,
-and error diagnosis.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Trained users in MPI introduction short courses that covered data
+collect results to a database, and analyze the information postmortem.</p></li>
+<li><p>Assisted Saguaro users with MPI application development, debugging, profiling,
+and error diagnosis.</p></li>
+<li><p>Trained users in MPI introduction short courses that covered data
 decomposition, MPI data types, check-pointing with MPI/IO, and debugging using
-the GNU Debugger (GDB) and GDBase.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Streamlined error detection on Saguaro using a set of scripts to control job
+the GNU Debugger (GDB) and GDBase.</p></li>
+<li><p>Streamlined error detection on Saguaro using a set of scripts to control job
 scheduling. If errors are found on a machine, staff members are notified, and
-jobs are then rescheduled to error free machines with no intervention.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Developed ASULinx, a prototype Ruby on Rails social networking tool designed
+jobs are then rescheduled to error free machines with no intervention.</p></li>
+<li><p>Developed ASULinx, a prototype Ruby on Rails social networking tool designed
 to highlight interdisciplinary relationships and collaborative research in a
-graphical manner.  (asulinx.asu.edu})&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Subject Matter Expert, Lionbridge Technologies&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;7/2009&lt;/span&gt;
-Microsoft &amp;#8211; Redmond, Washington&lt;/p&gt;
+graphical manner.  (asulinx.asu.edu})</p></li>
+</ul>
+</li>
+<li><p><strong>Subject Matter Expert, Lionbridge Technologies</strong><br/>
+<span style="float:right;">7/2009</span>
+Microsoft &#8211; Redmond, Washington</p>
 
-&lt;ul&gt;
-&lt;li&gt;Authored and revised questions for the Microsoft HPC 2008
-  certification exam.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Developer, Office of the Vice President for Global Engagement&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;7/2008 &amp;#8211; 11/2008&lt;/span&gt;
-Arizona State University &amp;#8211; Tempe, Arizona&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Updated ASULinx to fit the needs of the Global Engagement Department.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Collaborated with a design company (Esser Design) on integrating new artwork.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Graduate Student Intern, HPC-3 Department&lt;/strong&gt;&lt;br/&gt;
-&lt;span style=&quot;float:right;&quot;&gt;5/2008 &amp;#8211; 7/2008&lt;/span&gt;
-Los Alamos National Laboratory (LANL) &amp;#8211; Los Alamos, New Mexico&lt;/p&gt;
+<ul>
+<li>Authored and revised questions for the Microsoft HPC 2008
+  certification exam.</li>
+</ul>
+</li>
+<li><p><strong>Web Developer, Office of the Vice President for Global Engagement</strong><br/>
+<span style="float:right;">7/2008 &#8211; 11/2008</span>
+Arizona State University &#8211; Tempe, Arizona</p></li>
+<li><p>Updated ASULinx to fit the needs of the Global Engagement Department.</p></li>
+<li><p>Collaborated with a design company (Esser Design) on integrating new artwork.</p></li>
+<li><p><strong>Graduate Student Intern, HPC-3 Department</strong><br/>
+<span style="float:right;">5/2008 &#8211; 7/2008</span>
+Los Alamos National Laboratory (LANL) &#8211; Los Alamos, New Mexico</p>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Worked towards porting the Stack Trace Analysis Tool (STAT) for use on the
-high performance computing (HPC) systems at LANL.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Collaborated with developers at Los Alamos National Laboratory and Lawrence
-Livermore National Laboratory on the Development of STAT.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li><p>Worked towards porting the Stack Trace Analysis Tool (STAT) for use on the
+high performance computing (HPC) systems at LANL.</p></li>
+<li><p>Collaborated with developers at Los Alamos National Laboratory and Lawrence
+Livermore National Laboratory on the Development of STAT.</p></li>
+</ul>
+</li>
+</ul>
 
 
-&lt;h2&gt;Publications&lt;/h2&gt;
+<h2>Publications</h2>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&amp;#8220;Architecture for an Offline Parallel Debugger&amp;#8221; IEEE International Symposium
-on Parallel and Distributed Processing with Applications (ISPA), 12/2008.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&amp;#8220;A Scalable Framework for Offline Parallel Debugging&amp;#8221; 9th Linux Cluster
+<ul>
+<li><p>&#8220;Architecture for an Offline Parallel Debugger&#8221; IEEE International Symposium
+on Parallel and Distributed Processing with Applications (ISPA), 12/2008.</p></li>
+<li><p>&#8220;A Scalable Framework for Offline Parallel Debugging&#8221; 9th Linux Cluster
 Institute (LCI) International Conference on High-Performance Clustered
-Computing, 4/2008.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+Computing, 4/2008.</p></li>
+</ul>
 
-</content>
+]]></content>
   </entry>
   
   <entry>
-    <title>./configure &#8211;prefix=$HOME</title>
+    <title type="html"><![CDATA[./configure --prefix=$HOME]]></title>
     <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure/"/>
     <updated>2011-09-21T13:39:00-04:00</updated>
     <id>http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure</id>
-    <content type="html">&lt;p&gt;Hello world, I am a software engineer working in High Performance Computing.
-Currently I am with the &lt;a href=&quot;http://www.olcf.ornl.gov/&quot;&gt;OLCF&lt;/a&gt; working as their
+    <content type="html"><![CDATA[<p>Hello world, I am a software engineer working in High Performance Computing.
+Currently I am with the <a href="http://www.olcf.ornl.gov/">OLCF</a> working as their
 Software Czar. Thats the fancy name for the person who decides what software
 will be installed center-wide and gets things done. The OLCF is the name given
 to the department responsible for marinating all supercomputers a Oak Ridge
-National Laboratory (ORNL). It&amp;#8217;s the most recent name chosen, previously known
-as &lt;a href=&quot;http://www.nccs.gov/&quot;&gt;NCCS&lt;/a&gt;.&lt;/p&gt;
+National Laboratory (ORNL). It&#8217;s the most recent name chosen, previously known
+as <a href="http://www.nccs.gov/">NCCS</a>.</p>
 
-&lt;p&gt;My background is Computer Science, for details please see my resume. Recently,
-I&amp;#8217;ve taken a liking to hardware design and construction. Most of my posts here
-will cover that topic.&lt;/p&gt;
+<p>My background is Computer Science, for details please see my resume. Recently,
+I&#8217;ve taken a liking to hardware design and construction. Most of my posts here
+will cover that topic.</p>
 
-&lt;p&gt;Thanks for stopping by!&lt;/p&gt;
-</content>
+<p>Thanks for stopping by!</p>
+]]></content>
   </entry>
   
 </feed>

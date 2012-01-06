@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: resume | DiGirolamo Knows]]></title>
+  <link href="http://anthonydigirolamo.github.com/blog/categories/resume/atom.xml" rel="self"/>
+  <link href="http://anthonydigirolamo.github.com/"/>
+  <updated>2012-01-06T14:05:30-05:00</updated>
+  <id>http://anthonydigirolamo.github.com/</id>
+  <author>
+    <name><![CDATA[Anthony DiGirolamo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Anthony DiGirolamo's Resume]]></title>
+    <link href="http://anthonydigirolamo.github.com/blog/2011/09/21/resume/"/>
+    <updated>2011-09-21T14:19:00-04:00</updated>
+    <id>http://anthonydigirolamo.github.com/blog/2011/09/21/resume</id>
+    <content type="html"><![CDATA[<p>You may <a href="/downloads/digirolamo_resume.pdf">Download</a> this as a PDF. Otherwise, read on!</p>
+
+<h2>Education</h2>
+
+<ul>
+<li><p><span style="float:right;">GPA: 3.80</span> Masters of Science in Computer Science -- In progress<br/>
+Ira A. Fulton School of Engineering, Arizona State University -- Tempe, Arizona<br/>
+20 credit hours completed</p></li>
+<li><p><span style="float:right;">GPA: 3.38</span> Bachelor of Science in Computer Science -- Completed 12/2006<br/>
+Ira A. Fulton School of Engineering, Arizona State University -- Tempe, Arizona<br/>
+138 credit hours completed</p></li>
+</ul>
+
+
+<h2>Technical Skills</h2>
+
+<ul>
+<li><p>Parallel application development in C and Fortran using MPI and OpenMP. Cloud
+application development using Java and the Apache Hadoop project. Additional
+Languages: Ruby, Python, and C++.</p></li>
+<li><p>Web application development with Ruby on Rails, JavaScript, CSS, and SQL
+including production level deployment with Linux, Apache, nginx, MySQL,
+PostgreSQL, Subversion, and Git.</p></li>
+<li><p>Comfortable with clustered Linux systems including shell scripting, the Torque
+resource manager, the Moab scheduler, and InfiniBand networking.</p></li>
+</ul>
+
+
+<h2>Work Experience</h2>
+
+<ul>
+<li><p><strong>Technical Support Analyst Senior, High Performance Computing Initiative</strong><br/>
+<span style="float:right;">06/2010 -- Present</span>
+Arizona State University -- Tempe, Arizona</p>
+
+<ul>
+<li><p>Administered the Saguaro High Performance Computing (HPC) system
+which ranked 160 in the Top 500 Supercomputer Sites as of June 2009.</p></li>
+<li><p>Communicated with end users to provide application configuration,
+installation, testing, and deployment.</p></li>
+<li><p>Developed and delivered instructional short courses on parallel
+programming using the Message Passing Interface (MPI) on the Saguaro HPC
+system.</p></li>
+<li><p>Supported the day to day operations using technologies such as: Moab,
+Torque, the Gold Allocation System, Request Tracker, CFEngine, System Imager,
+FlexLM, and building custom RPMs from source installs.</p></li>
+<li><p>Interfaced with software and hardware vendors for upgrades and
+maintenance.</p></li>
+</ul>
+</li>
+<li><p><strong>Web Application Developer, Integrum Technologies LLC</strong><br/>
+<span style="float:right;">01/2010 -- 06/2010</span>
+260 South Arizona Avenue -- Chandler, Arizona</p>
+
+<ul>
+<li><p>Designed, developed, and tested web applications using the Ruby
+on Rails framework.</p></li>
+<li><p>Worked directly with clients daily using SCRUM and Agile
+techniques to ensure a high amount of communication, fast turn around
+times, and thoroughly tested code.</p></li>
+<li><p>Performed a heavy amount of integration testing using Cucumber.</p></li>
+<li><p>Followed Test Driven Development methodologies in a pair-programming
+environment with an emphasis on continuous refactoring.</p></li>
+<li><p>Deployed production applications using technologies such as: MySQL,
+PostgreSQL, NGINX, Apache, Postfix, and Phusion Passenger.</p></li>
+</ul>
+</li>
+<li><p><strong>Research Assistant, High Performance Computing Initiative</strong><br/>
+<span style="float:right;">2/2006 -- 4/2008, 8/2008 -- 12/2009</span>
+Arizona State University -- Tempe, Arizona</p>
+
+<ul>
+<li><p>Designed and built GDBase, an off-line framework for debugging MPI
+applications. It provides a method for users to define debugger behavior,
+collect results to a database, and analyze the information postmortem.</p></li>
+<li><p>Assisted Saguaro users with MPI application development, debugging, profiling,
+and error diagnosis.</p></li>
+<li><p>Trained users in MPI introduction short courses that covered data
+decomposition, MPI data types, check-pointing with MPI/IO, and debugging using
+the GNU Debugger (GDB) and GDBase.</p></li>
+<li><p>Streamlined error detection on Saguaro using a set of scripts to control job
+scheduling. If errors are found on a machine, staff members are notified, and
+jobs are then rescheduled to error free machines with no intervention.</p></li>
+<li><p>Developed ASULinx, a prototype Ruby on Rails social networking tool designed
+to highlight interdisciplinary relationships and collaborative research in a
+graphical manner.  (asulinx.asu.edu})</p></li>
+</ul>
+</li>
+<li><p><strong>Subject Matter Expert, Lionbridge Technologies</strong><br/>
+<span style="float:right;">7/2009</span>
+Microsoft -- Redmond, Washington</p>
+
+<ul>
+<li>Authored and revised questions for the Microsoft HPC 2008
+  certification exam.</li>
+</ul>
+</li>
+<li><p><strong>Web Developer, Office of the Vice President for Global Engagement</strong><br/>
+<span style="float:right;">7/2008 -- 11/2008</span>
+Arizona State University -- Tempe, Arizona</p></li>
+<li><p>Updated ASULinx to fit the needs of the Global Engagement Department.</p></li>
+<li><p>Collaborated with a design company (Esser Design) on integrating new artwork.</p></li>
+<li><p><strong>Graduate Student Intern, HPC-3 Department</strong><br/>
+<span style="float:right;">5/2008 -- 7/2008</span>
+Los Alamos National Laboratory (LANL) -- Los Alamos, New Mexico</p>
+
+<ul>
+<li><p>Worked towards porting the Stack Trace Analysis Tool (STAT) for use on the
+high performance computing (HPC) systems at LANL.</p></li>
+<li><p>Collaborated with developers at Los Alamos National Laboratory and Lawrence
+Livermore National Laboratory on the Development of STAT.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Publications</h2>
+
+<ul>
+<li><p>"Architecture for an Offline Parallel Debugger" IEEE International Symposium
+on Parallel and Distributed Processing with Applications (ISPA), 12/2008.</p></li>
+<li><p>"A Scalable Framework for Offline Parallel Debugging" 9th Linux Cluster
+Institute (LCI) International Conference on High-Performance Clustered
+Computing, 4/2008.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
