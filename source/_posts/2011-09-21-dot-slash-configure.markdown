@@ -3,7 +3,7 @@ layout: post
 title: "./configure --prefix=$HOME"
 date: 2011-09-21 13:39
 comments: true
-categories: front_matter
+categories: about
 ---
 
 Hello world, I am a software engineer working in High Performance Computing.
