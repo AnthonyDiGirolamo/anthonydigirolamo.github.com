@@ -2,42 +2,22 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/dot-slash-configure/</loc>
-<<<<<<< HEAD
-        <lastmod>2012-01-10T14:04:30-05:00</lastmod>
+        <lastmod>2012-05-29T11:06:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/resume/</loc>
-        <lastmod>2012-01-10T14:04:30-05:00</lastmod>
+        <lastmod>2012-05-29T11:06:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing/</loc>
-        <lastmod>2012-01-06T13:28:26-05:00</lastmod>
+        <lastmod>2012-05-29T11:06:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://anthonydigirolamo.github.com/blog/archives/</loc>
-        <lastmod>2012-01-10T14:04:30-05:00</lastmod>
+        <lastmod>2012-05-29T11:06:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://anthonydigirolamo.github.com/</loc>
-        <lastmod>2012-01-10T14:04:30-05:00</lastmod>
-=======
-        <lastmod>2012-05-29T10:43:23-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/resume/</loc>
-        <lastmod>2012-05-29T10:43:23-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://anthonydigirolamo.github.com/blog/2011/09/21/octopress-category-listing/</loc>
-        <lastmod>2012-05-29T10:43:23-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://anthonydigirolamo.github.com/blog/archives/</loc>
-        <lastmod>2012-05-29T10:43:23-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://anthonydigirolamo.github.com/</loc>
-        <lastmod>2012-05-29T10:43:23-04:00</lastmod>
->>>>>>> ed21f9db8675dc6966531eeef82f63df3f12da02
+        <lastmod>2012-05-29T11:06:22-04:00</lastmod>
     </url>
 </urlset>
