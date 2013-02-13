@@ -1,0 +1,9 @@
+---
+layout: post
+title: "smithy"
+date: 2013-02-13 14:14
+comments: true
+categories:
+---
+
+Test post
