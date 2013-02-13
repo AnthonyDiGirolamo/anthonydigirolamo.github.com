@@ -4,7 +4,7 @@
   <title><![CDATA[DiGirolamo Knows]]></title>
   <link href="http://anthonydigirolamo.github.com/atom.xml" rel="self"/>
   <link href="http://anthonydigirolamo.github.com/"/>
-  <updated>2012-05-29T11:10:04-04:00</updated>
+  <updated>2013-02-13T14:29:40-05:00</updated>
   <id>http://anthonydigirolamo.github.com/</id>
   <author>
     <name><![CDATA[Anthony DiGirolamo]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[smithy]]></title>
+    <link href="http://anthonydigirolamo.github.com/blog/2013/02/13/smithy/"/>
+    <updated>2013-02-13T14:14:00-05:00</updated>
+    <id>http://anthonydigirolamo.github.com/blog/2013/02/13/smithy</id>
+    <content type="html"><![CDATA[<p>Test post</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress Category Listing]]></title>
