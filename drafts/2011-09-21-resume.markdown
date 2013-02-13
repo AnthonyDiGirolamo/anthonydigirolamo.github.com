@@ -2,8 +2,9 @@
 layout: post
 title: "Anthony DiGirolamo's Resume"
 date: 2011-09-21 14:19
-comments: true
+comments: false
 categories: resume
+published: false
 ---
 
 You may also [Download](/downloads/digirolamo_resume.pdf) this as a PDF.

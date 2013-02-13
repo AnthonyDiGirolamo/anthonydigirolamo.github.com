@@ -11,11 +11,9 @@ Currently I am with the [OLCF](http://www.olcf.ornl.gov/) working as their
 Software Czar. That's the fancy name for the person who decides what software
 will be installed center-wide and gets things done. The OLCF is the name given
 to the department responsible for marinating all supercomputers a Oak Ridge
-National Laboratory (ORNL). It's the most recent name chosen, previously known
-as [NCCS](http://www.nccs.gov/).
+National Laboratory (ORNL).
 
-My background is Computer Science, for details please see my resume. Recently,
-I've taken a liking to hardware design and construction. Most of my posts here
-will cover that topic.
+My background is Computer Science but recently, I've taken a liking to hardware
+design and construction. Most of my posts here will cover that topic.
 
 Thanks for stopping by!
