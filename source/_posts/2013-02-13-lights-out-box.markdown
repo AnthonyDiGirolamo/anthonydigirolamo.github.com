@@ -83,11 +83,138 @@ You can find them at
 
 ### Code
 
-The code is pretty well organized for an arduino sketch. I've written a library
-for controlling the MAX6954's. The lights out and color chooser functions are
-broken out into their own classes.
+The [Lights Out Arduino Sketch](https://github.com/AnthonyDiGirolamo/lightsout)
+is pretty well organized. I've also written a
+[library for controlling the MAX6954's](https://github.com/AnthonyDiGirolamo/MAX6954).
+which keeps the lights out code simpler.
+
+The sketch is organized into separate files. When compiled in the Arduino IDE
+the files are concatenated and then compiled as a single source file. The
+lights out and color chooser functions are broken out into their own classes.
+All strings and levels are stored in program memory.
+
+Each level, and the state of the board, is represented by a 16-bit unsigned
+integer. Litterally 16 1's or 0's. This makes it takeup very little ram. To
+compute a solution for a given board a matrix vector multiplication needs to be
+performed. The 16x16 matrix is composed of only 1's and 0's so to save space I
+store it as an array of 16 bit integers.
+
+{% codeblock Matrix for solving a given lights out game lang:c https://github.com/AnthonyDiGirolamo/lightsout/blob/master/lightsout_01_vars.ino Source File %}
+// This is a matrix of 1's and 0's packed into 16 bit integers
+prog_uint16_t solving_matrix[] = {
+  0xD808,
+  0xE404,
+  0x7202,
+  0xB101,
+  0x8D80,
+  0x4E40,
+  0x2720,
+  0x1B10,
+  0x8D8,
+  0x4E4,
+  0x272,
+  0x1B1,
+  0x808D,
+  0x404E,
+  0x2027,
+  0x101B
+};
+
+// The same matrix but stored as a 16x16 array
+// prog_uint16_t uint16_t matrix_a[16][16] = {
+// {1,1,0,1,1,0,0,0,0,0,0,0,1,0,0,0},
+// {1,1,1,0,0,1,0,0,0,0,0,0,0,1,0,0},
+// {0,1,1,1,0,0,1,0,0,0,0,0,0,0,1,0},
+// {1,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1},
+// {1,0,0,0,1,1,0,1,1,0,0,0,0,0,0,0},
+// {0,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0},
+// {0,0,1,0,0,1,1,1,0,0,1,0,0,0,0,0},
+// {0,0,0,1,1,0,1,1,0,0,0,1,0,0,0,0},
+// {0,0,0,0,1,0,0,0,1,1,0,1,1,0,0,0},
+// {0,0,0,0,0,1,0,0,1,1,1,0,0,1,0,0},
+// {0,0,0,0,0,0,1,0,0,1,1,1,0,0,1,0},
+// {0,0,0,0,0,0,0,1,1,0,1,1,0,0,0,1},
+// {1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,1},
+// {0,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0},
+// {0,0,1,0,0,0,0,0,0,0,1,0,0,1,1,1},
+// {0,0,0,1,0,0,0,0,0,0,0,1,1,0,1,1} }
+{% endcodeblock %}
+
+Packing the matrix value like this adds a bit of code to the matrix vector
+multiply. It's still quite readable though. If you are unfamiliar with bitmath
+checkout [The Arduino Playground Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath)
+and [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
+
+{% codeblock Matrix Vector Multiply lang:c https://github.com/AnthonyDiGirolamo/lightsout/blob/master/lightsout_04_lights_out_class.ino Source File %}
+uint16_t find_solution() {
+  uint16_t a, b, x, solution;
+  solution = 0;
+  for(int r=0; r<16; r++) {
+    x = 0;
+    for(int c=15; c>=0; c--) {
+      a = (solving_matrix[r] & space_masks[c]) >> (c); // Unpack matrix value
+      b = (current_board & space_masks[c]) >> (c); // Unpack level value
+      x += (a*b);
+    }
+    x %= 2;
+    solution |= (x << (15-r)); // Pack
+  }
+  return solution;
+}
+{% endcodeblock %}
+
+As a side note, it's pretty easy to convert number bases in your editor if you
+can filter text through an external program. This is trivial in vim and is
+possible with other editors like TextMate. In vim, I filter the following text
+through `bc` "An arbitrary precision calculator language" available on almost
+any Linux distribution and MacOSX. The first two lines tell bc to output base 16
+and take base 2 as input (they should be set in that order).
+
+{% codeblock Base 2 input %}
+obase=16;ibase=2
+1101100000001000
+1110010000000100
+0111001000000010
+1011000100000001
+1000110110000000
+0100111001000000
+0010011100100000
+0001101100010000
+0000100011011000
+0000010011100100
+0000001001110010
+0000000110110001
+1000000010001101
+0100000001001110
+0010000000100111
+0001000000011011
+{% endcodeblock %}
+
+The result, instant base 16 without leaving the editor!
+
+{% codeblock Base 16 output %}
+D808
+E404
+7202
+B101
+8D80
+4E40
+2720
+1B10
+8D8
+4E4
+272
+1B1
+808D
+404E
+2027
+101B
+{% endcodeblock %}
 
 ### Improvements:
+
+If I were to build this whole thing again from scratch I would make these
+changes:
 
 * Design a circuit board instead of wire wrapping
 * Tab-in-slot method enclosure
