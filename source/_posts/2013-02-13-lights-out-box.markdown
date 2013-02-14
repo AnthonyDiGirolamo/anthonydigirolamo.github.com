@@ -98,7 +98,7 @@ lights out and color chooser functions are broken out into their own classes.
 All strings and levels are stored in program memory.
 
 Each level, and the state of the board, is represented by a 16-bit unsigned
-integer. Litterally 16 1's or 0's. This makes it takeup very little ram. To
+integer. Litterally 16 1's or 0's. This makes it takeup very little space. To
 compute a solution for a given board a matrix vector multiplication needs to be
 performed. The 16x16 matrix is composed of only 1's and 0's so to save space I
 store it as an array of 16 bit integers.
