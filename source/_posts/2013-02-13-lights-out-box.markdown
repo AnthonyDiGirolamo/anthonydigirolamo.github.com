@@ -31,25 +31,26 @@ lot of character and thats good for me.
 I took the lego approach to putting this together. Pick powerful components and
 wire them up. Here is a list of every part used and what I paid for it.
 
-* [Pololu Step-Down Voltage Regulator D15V35F5S3](http://www.pololu.com/catalog/product/2110) $14.95
-* [ATMEGA328P](https://www.adafruit.com/products/123) $2.85
-* 16x [0.8 inch Alphanumeric Displays](http://shop.evilmadscientist.com/productsmenu/partsmenu/232) $26.40
+
+* $14.95 [Pololu Step-Down Voltage Regulator D15V35F5S3](http://www.pololu.com/catalog/product/2110)
+* $2.85 [ATMEGA328P](https://www.adafruit.com/products/123)
+* $26.40 16x [0.8 inch Alphanumeric Displays](http://shop.evilmadscientist.com/productsmenu/partsmenu/232)
 * 2x [MAX6954 4-Wire Interfaced, 2.7V to 5.5V LED Display Driver with I/O Expander and Key Scan](http://www.maximintegrated.com/datasheet/index.mvp/id/3410) Free - requested free samples
-* [12mm Diffused Thin Digital RGB LED Pixels (Strand of 25) - WS2801](https://www.adafruit.com/products/322) $39.95
-* [MCP23017 - i2c 16 input/output port expander](https://www.adafruit.com/products/732) $2.95
-* 16x [Arcade Button - 30mm Translucent Clear](https://www.adafruit.com/products/471) $42.56
-* [Waterproof Metal On/Off Switch with Green LED Ring](http://adafruit.com/products/482) $5.95
-* [10x30ft of kynar wire](http://www.ebay.com/itm/10-X-30-ft-Kynar-30-awg-wire-10-Color-4-xbox-v-game-/260623604297) $21.90
-* [Wire wrap sockets](http://www.king-cart.com/phoenixent/product=SOCKETS+WIRE+WRAP+DIP+%2526+SIP/exact_match=exact) Parts HWS3089, HWS15765, HWS1462 $34.18
-* 2x [4xAA Battery Holder](http://shop.evilmadscientist.com/productsmenu/partsmenu/422) $4.50
-* [6-32 x 3/8 inch Button Socket Cap Head Screw](http://shop.evilmadscientist.com/productsmenu/partsmenu/468-632bscs) $6.46
-* [Right Angle Mounting Bracket](http://shop.evilmadscientist.com/productsmenu/partsmenu/465-bracket) $10.20
-* [Premium Female/Female Jumper Wires - 40 x 6"](https://www.adafruit.com/products/266) $6.95
-* [Clear Acrylic from Ponoko](http://www.ponoko.com/make-and-sell/show-material/72-acrylic-clear) $32.96
-* [5/64 inch Balldriver](http://shop.evilmadscientist.com/productsmenu/partsmenu/202) $2.50
-* [FTDI Friend + extras - v1.0](https://www.adafruit.com/products/284) $14.95
-* [Wire-Wrapping Tool](http://www.radioshack.com/product/index.jsp?productId=2103243) $6.99
-* Various resistors and capacitors mostly 0.1µF ones about $5.00
+* $39.95 [12mm Diffused Thin Digital RGB LED Pixels (Strand of 25) - WS2801](https://www.adafruit.com/products/322)
+* $2.95 [MCP23017 - i2c 16 input/output port expander](https://www.adafruit.com/products/732)
+* $42.56 16x [Arcade Button - 30mm Translucent Clear](https://www.adafruit.com/products/471)
+* $5.95 [Waterproof Metal On/Off Switch with Green LED Ring](http://adafruit.com/products/482)
+* $21.90 [10x30ft of kynar wire](http://www.ebay.com/itm/10-X-30-ft-Kynar-30-awg-wire-10-Color-4-xbox-v-game-/260623604297)
+* $34.18 [Wire wrap sockets](http://www.king-cart.com/phoenixent/product=SOCKETS+WIRE+WRAP+DIP+%2526+SIP/exact_match=exact) Parts HWS3089, HWS15765, HWS1462
+* $4.50 2x [4xAA Battery Holder](http://shop.evilmadscientist.com/productsmenu/partsmenu/422)
+* $6.46 [6-32 x 3/8 inch Button Socket Cap Head Screw](http://shop.evilmadscientist.com/productsmenu/partsmenu/468-632bscs)
+* $10.20 [Right Angle Mounting Bracket](http://shop.evilmadscientist.com/productsmenu/partsmenu/465-bracket)
+* $6.95 [Premium Female/Female Jumper Wires - 40 x 6"](https://www.adafruit.com/products/266)
+* $32.96 [Clear Acrylic from Ponoko](http://www.ponoko.com/make-and-sell/show-material/72-acrylic-clear)
+* $2.50 [5/64 inch Balldriver](http://shop.evilmadscientist.com/productsmenu/partsmenu/202)
+* $14.95 [FTDI Friend + extras - v1.0](https://www.adafruit.com/products/284)
+* $6.99 [Wire-Wrapping Tool](http://www.radioshack.com/product/index.jsp?productId=2103243)
+* $5.00 Various resistors and capacitors mostly 0.1µF ones about
 
 ### Build
 
