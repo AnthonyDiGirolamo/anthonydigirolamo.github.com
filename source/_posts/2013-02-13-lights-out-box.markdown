@@ -35,7 +35,7 @@ wire them up. Here is a list of every part used and what I paid for it.
 * $14.95 [Pololu Step-Down Voltage Regulator D15V35F5S3](http://www.pololu.com/catalog/product/2110)
 * $2.85 [ATMEGA328P](https://www.adafruit.com/products/123)
 * $26.40 16x [0.8 inch Alphanumeric Displays](http://shop.evilmadscientist.com/productsmenu/partsmenu/232)
-* 2x [MAX6954 4-Wire Interfaced, 2.7V to 5.5V LED Display Driver with I/O Expander and Key Scan](http://www.maximintegrated.com/datasheet/index.mvp/id/3410) Free - requested free samples
+* [Free Samples](https://shop.maximintegrated.com/storefront/searchsample.do?menuitem=Sample&event=SampleSearchLoad) 2x [MAX6954 4-Wire Interfaced, 2.7V to 5.5V LED Display Driver with I/O Expander and Key Scan](http://www.maximintegrated.com/datasheet/index.mvp/id/3410)
 * $39.95 [12mm Diffused Thin Digital RGB LED Pixels (Strand of 25) - WS2801](https://www.adafruit.com/products/322)
 * $2.95 [MCP23017 - i2c 16 input/output port expander](https://www.adafruit.com/products/732)
 * $42.56 16x [Arcade Button - 30mm Translucent Clear](https://www.adafruit.com/products/471)
