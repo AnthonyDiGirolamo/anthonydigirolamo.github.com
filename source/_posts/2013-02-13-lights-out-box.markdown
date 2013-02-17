@@ -10,7 +10,7 @@ Over the past year I've been working on my first big hardware project. It
 started as an experiment in powering and controlling led displays. I love the
 blinky lights and wanted something big that would catch the eye.
 
-[{% img [class names] https://photos-5.dropbox.com/t/0/AAALul1BkN4vfrUvgX2vYEPqF3XY7ZWLLRyRF_fZW1T81g/10/2433692/jpeg/32x32/2/1361048400/0/2/IMG_3852.JPG/2VN5R97RXvy0r0VcbmgAgwiwKaGo9AsWeI1gcROgxsA?size=1600x1200&size_mode=2 Lights Out %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3852.JPG)
+[{% img /images/lights_out/IMG_3852.JPG Lights Out %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3852.JPG)
 
 The end result is a tabletop sized arcade for a 4x4 lights out game similar in
 gameplay to the
@@ -29,8 +29,8 @@ Checkout a demo of the gameplay here: [View on Vimeo](https://vimeo.com/59807162
 
 ### Parts
 
-I took the lego approach to putting this together. Pick powerful components and
-wire them up. Here is a list of every part used and what I paid for it.
+I took the lego approach while putting this together. Pick powerful components
+and wire them up. Here is a list of every part used and what I paid for it.
 
 |--------|----|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Price  | Quantity | Item |
@@ -62,14 +62,14 @@ Most of these parts are overkill and I'm sure this project could be accomplished
 cheaper and more efficiently. Some parts don't seem to be available anymore.
 Even so, it has a lot of character and thats what I was going for.
 
-[{% img https://photos-4.dropbox.com/t/0/AAC2d4xY9ixXkgsI_Es1P6B2nuIL56gIyBHOSUAhhL1x3w/10/2433692/jpeg/32x32/2/1361048400/0/2/IMG_3878.JPG/4DB_-I-f3ltaPtUieIKXZUVFUx8GbggqEjbAA7AIlXY?size=1600x1200&size_mode=2 Lights Out %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3878.JPG)
-
-{% img right https://photos-1.dropbox.com/t/0/AAD5zVpXe441_20TvT4Nc8BbQ0jyj6kj3X1g4c6lLO4MLw/10/2433692/png/32x32/2/1361052000/0/2/MAX6954%20Connection%20Circuit.png/9G2w-lmngKtFgIESrc8labPQQhElFDGYhx4a9w8zl1s?size=1600x1200&size_mode=2 MAX6954 Connection Circuit %}
-
 Here you can see the layout of the components. I couldn't find a through hole
 protoboard that was large enough to accommodate all of the alphanumeric digits so
 I fastened two together and used some legos attached to with screws for
 reinforcement.
+
+[{% img /images/lights_out/IMG_3878.JPG Board Layout %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3878.JPG)
+
+{% img right /images/lights_out/MAX6954_Connection_Circuit.png MAX6954 Connection Circuit %}
 
 Below the alphanumeric digits are the MAX6954 drivers. There is one driver per
 row. Next to each driver are decoupling capacitors and a resistor for limiting
@@ -86,9 +86,9 @@ wrapping that many connections took about 6hrs total. Below is the connection
 scheme in a table from the datasheet. The chip uses charlie-plexing to control
 that many segments.
 
-[{% img https://photos-6.dropbox.com/t/0/AAB03gvv4jVorznvQvBOO_vMxvZLiKl-y2txk9WWBVJd_A/10/2433692/png/32x32/2/1361052000/0/2/MAX6954%20Connections%20for%208%2016-Segment%20Digits.png/4fWbkYgF7fWejkF0fE2VD_pcd1v6mZ-yUyy6xk-0mug?size=1600x1200&size_mode=2 MAX6954 Display Circuit %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/zD-R6pwl56#f:MAX6954%20Connections%20for%208%2016-Segment%20Digits.png)
+[{% img /images/lights_out/MAX6954_Connections_for_8_16-Segment_Digits.png MAX6954 Display Circuit %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/zD-R6pwl56#f:MAX6954%20Connections%20for%208%2016-Segment%20Digits.png)
 
-[{% img https://photos-4.dropbox.com/t/0/AABbgmZkPjvVqLHP-B3ITMWjRIPZQd1e9Tn99D5C6omCAw/10/2433692/jpeg/32x32/2/1361048400/0/2/IMG_3881.JPG/TWoaWP00brHSFjr8sIOIl4yujXu8COveBHOD36JUnSY?size=1600x1200&size_mode=2 Lights Out %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3881.JPG)
+[{% img /images/lights_out/IMG_3881.JPG Button panel removed %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3881.JPG)
 
 ### Build
 
