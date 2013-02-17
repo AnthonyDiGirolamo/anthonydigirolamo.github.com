@@ -9,8 +9,8 @@
   <meta name="author" content="Anthony DiGirolamo">
 
   
-  <meta name="description" content="While setting up my side bar for this site I wanted to easily list all
-categories from all posts. Unfortunately, this is non-trivial from what I &hellip;">
+  <meta name="description" content="Over the past year I’ve been working on my first big hardware project. It
+started as an experiment in powering and controlling led displays. I love &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ categories from all posts. Unfortunately, this is non-trivial from what I &helli
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anthonydigirolamo.github.com">
+  <link rel="canonical" href="http://anthonydigirolamo.github.com/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -38,7 +38,7 @@ categories from all posts. Unfortunately, this is non-trivial from what I &helli
   <header role="banner"><hgroup>
   <h1><a href="/">DiGirolamo Knows</a></h1>
   
-    <h2>Let the tinkering begin</h2>
+    <h2>ideas.save! if brain.blank?</h2>
   
 </hgroup>
 
@@ -65,6 +65,58 @@ categories from all posts. Unfortunately, this is non-trivial from what I &helli
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/13/lights-out-box/">Lights Out Arcade Box</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T14:46:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Over the past year I’ve been working on my first big hardware project. It
+started as an experiment in powering and controlling led displays. I love the
+blinky lights and wanted something big that would catch the eye.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3852.JPG"><img src="/images/lights_out/IMG_3852.JPG" title="Lights Out" /></a></p>
+
+<p>The end result is a tabletop sized arcade for a 4x4 lights out game similar in
+gameplay to the
+<a href="http://www.jaapsch.net/puzzles/lights.htm#descmini">Mini Lights out Game</a>
+by Tiger Electronics.</p>
+
+<p>Checkout a video demo of the gameplay <a href="https://vimeo.com/59807162">here on vimeo</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/13/lights-out-box/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -99,71 +151,67 @@ categories from all posts. Unfortunately, this is non-trivial from what I learne
 skimming the Octopress, Jekyll, and Liquid docs. Fortunately, there is an easy
 fix. Here are the diffs of the changes I made:</p>
 
-<figure class='code'><figcaption><span> (category_generator.diff)</span> <a href='/downloads/code/category_generator.diff'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/plugins/category_generator.rb b/plugins/category_generator.rb</span>
-</span><span class='line'><span class="gh">index d9357bc..49e9d40 100644</span>
-</span><span class='line'><span class="gd">--- a/plugins/category_generator.rb</span>
-</span><span class='line'><span class="gi">+++ b/plugins/category_generator.rb</span>
-</span><span class='line'><span class="gu">@@ -106,6 +106,7 @@ module Jekyll</span>
-</span><span class='line'>     #
-</span><span class='line'>     def category_links(categories)
-</span><span class='line'>       dir = @context.registers[:site].config[&#39;category_dir&#39;]
-</span><span class='line'><span class="gi">+      categories = categories.keys if categories.class == Hash</span>
-</span><span class='line'>       categories = categories.sort!.map do |item|
-</span><span class='line'>         &quot;&lt;a class=&#39;category&#39; href=&#39;/#{dir}/#{item.gsub(/_|\P{Word}/, &#39;-&#39;).gsub(/-{2,}/, &#39;-&#39;).downcase}/&#39;&gt;#{item}&lt;/
-</span><span class='line'>       end
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (category_generator.diff)</span> <a href="/downloads/code/category_generator.diff">download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="diff"><span class="line"><span class="gh">diff --git a/plugins/category_generator.rb b/plugins/category_generator.rb</span>
+</span><span class="line"><span class="gh">index d9357bc..49e9d40 100644</span>
+</span><span class="line"><span class="gd">--- a/plugins/category_generator.rb</span>
+</span><span class="line"><span class="gi">+++ b/plugins/category_generator.rb</span>
+</span><span class="line"><span class="gu">@@ -106,6 +106,7 @@ module Jekyll</span>
+</span><span class="line">     #
+</span><span class="line">     def category_links(categories)
+</span><span class="line">       dir = @context.registers[:site].config[&#39;category_dir&#39;]
+</span><span class="line"><span class="gi">+      categories = categories.keys if categories.class == Hash</span>
+</span><span class="line">       categories = categories.sort!.map do |item|
+</span><span class="line">         &quot;&lt;a class=&#39;category&#39; href=&#39;/#{dir}/#{item.gsub(/_|\P{Word}/, &#39;-&#39;).gsub(/-{2,}/, &#39;-&#39;).downcase}/&#39;&gt;#{item}&lt;/
+</span><span class="line">       end
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-
-
-<figure class='code'><figcaption><span> (recent_posts.diff)</span> <a href='/downloads/code/recent_posts.diff'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/source/_includes/asides/recent_posts.html b/source/_includes/asides/recent_posts.html</span>
-</span><span class='line'><span class="gh">index cc62814..b12f77c 100644</span>
-</span><span class='line'><span class="gd">--- a/source/_includes/asides/recent_posts.html</span>
-</span><span class='line'><span class="gi">+++ b/source/_includes/asides/recent_posts.html</span>
-</span><span class='line'><span class="gu">@@ -1,4 +1,11 @@</span>
-</span><span class='line'> &lt;section&gt;
-</span><span class='line'><span class="gi">+  &lt;h1&gt;Categories&lt;/h1&gt;</span>
-</span><span class='line'><span class="gi">+  &lt;ul&gt;</span>
-</span><span class='line'><span class="gi">+    &lt;li&gt;</span>
-</span><span class='line'><span class="gi">+      {{ site.categories | category_links }}</span>
-</span><span class='line'><span class="gi">+    &lt;/li&gt;</span>
-</span><span class='line'><span class="gi">+  &lt;/ul&gt;</span>
-</span><span class='line'><span class="gi">+</span>
-</span><span class='line'>   &lt;h1&gt;Recent Posts&lt;/h1&gt;
-</span><span class='line'>   &lt;ul id=&quot;recent_posts&quot;&gt;
-</span><span class='line'>     {% for post in site.posts limit: site.recent_posts %}
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (recent_posts.diff)</span> <a href="/downloads/code/recent_posts.diff">download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class="diff"><span class="line"><span class="gh">diff --git a/source/_includes/asides/recent_posts.html b/source/_includes/asides/recent_posts.html</span>
+</span><span class="line"><span class="gh">index cc62814..b12f77c 100644</span>
+</span><span class="line"><span class="gd">--- a/source/_includes/asides/recent_posts.html</span>
+</span><span class="line"><span class="gi">+++ b/source/_includes/asides/recent_posts.html</span>
+</span><span class="line"><span class="gu">@@ -1,4 +1,11 @@</span>
+</span><span class="line"> &lt;section&gt;
+</span><span class="line"><span class="gi">+  &lt;h1&gt;Categories&lt;/h1&gt;</span>
+</span><span class="line"><span class="gi">+  &lt;ul&gt;</span>
+</span><span class="line"><span class="gi">+    &lt;li&gt;</span>
+</span><span class="line"><span class="gi">+      {{ site.categories | category_links }}</span>
+</span><span class="line"><span class="gi">+    &lt;/li&gt;</span>
+</span><span class="line"><span class="gi">+  &lt;/ul&gt;</span>
+</span><span class="line"><span class="gi">+</span>
+</span><span class="line">   &lt;h1&gt;Recent Posts&lt;/h1&gt;
+</span><span class="line">   &lt;ul id=&quot;recent_posts&quot;&gt;
+</span><span class="line">     {% for post in site.posts limit: site.recent_posts %}
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>This allows the <code>category_links</code> liquid filter to process the
 <code>site.categories</code> hash. The line added to <code>category_generator.rb</code> file gets
@@ -206,12 +254,12 @@ category.</p>
 
   <div class="entry-content"><p>Hello world, I am a software engineer working in High Performance Computing.
 Currently I am with the <a href="http://www.olcf.ornl.gov/">OLCF</a> working as their
-Software Czar. That&#8217;s the fancy name for the person who decides what software
+Software Czar. That’s the fancy name for the person who decides what software
 will be installed center-wide and gets things done. The OLCF is the name given
 to the department responsible for marinating all supercomputers a Oak Ridge
 National Laboratory (ORNL).</p>
 
-<p>My background is Computer Science but recently, I&#8217;ve taken a liking to hardware
+<p>My background is Computer Science but recently, I’ve taken a liking to hardware
 design and construction. Most of my posts here will cover that topic.</p>
 
 <p>Thanks for stopping by!</p>
@@ -234,13 +282,17 @@ design and construction. Most of my posts here will cover that topic.</p>
   <h1>Categories</h1>
   <ul>
     <li>
-      <a class='category' href='/blog/categories/about/'>about</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+      <a class='category' href='/blog/categories/about/'>about</a>, <a class='category' href='/blog/categories/arduino/'>arduino</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
     </li>
   </ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/lights-out-box/">Lights Out Arcade Box</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/09/21/octopress-category-listing/">Octopress Category Listing</a>
@@ -252,36 +304,6 @@ design and construction. Most of my posts here will cover that topic.</p>
     
   </ul>
 </section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/AnthonyDiGirolamo">@AnthonyDiGirolamo</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'AnthonyDiGirolamo',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 <section>
   <h1>Latest Tweets</h1>
@@ -298,9 +320,6 @@ design and construction. Most of my posts here will cover that topic.</p>
     <a href="http://twitter.com/anthonysavatar" class="twitter-follow-button" data-show-count="false">Follow @anthonysavatar</a>
   
 </section>
-
-
-
 
 
   

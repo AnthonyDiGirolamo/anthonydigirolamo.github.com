@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://anthonydigirolamo.github.com/sitemap.xml 
