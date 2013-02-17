@@ -17,15 +17,13 @@ gameplay to the
 [Mini Lights out Game](http://www.jaapsch.net/puzzles/lights.htm#descmini)
 by Tiger Electronics.
 
+Checkout a video demo of the gameplay [here on vimeo](https://vimeo.com/59807162).
+
 <!-- more -->
 
 This project took me a long while to complete due to lack of free time. I began
 when my son turned one year old and finished not long before he turned two. The
 effort paid off though and I'm happy with how it turned out.
-
-### Demo
-
-Checkout a demo of the gameplay here: [View on Vimeo](https://vimeo.com/59807162)
 
 ### Parts
 
@@ -71,7 +69,6 @@ reinforcement.
 
 [{% img /images/lights_out/IMG_3878.JPG Board Layout %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3878.JPG)
 
-
 ### The 17-segment displays
 
 [{% img /images/lights_out/IMG_3863.JPG Display Closeup %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3863.JPG)
@@ -114,7 +111,7 @@ finishing.
 
 I chose to wire wrap the whole thing because I wasn't 100% sure how to connect
 everything to start with. Unfortunately I'm lacking a proper circuit schematic.
-Learing how to use Eagle or gEDA is still on my todo list. I was able to get
+Learning how to use Eagle or gEDA is still on my todo list. I was able to get
 away with this because the connections outside of the digits are relatively
 simple and I could rewire anything quickly if needed.
 
@@ -200,7 +197,7 @@ lights out and color chooser functions are broken out into their own classes.
 All strings and levels are stored in program memory.
 
 Each level, and the state of the board, is represented by a 16-bit unsigned
-integer. Litterally 16 1's or 0's. This makes it takeup very little space. To
+integer. Literally 16 1's or 0's. This makes it take up very little space. To
 compute a solution for a given board a matrix vector multiplication needs to be
 performed. The 16x16 matrix is composed of only 1's and 0's so to save space I
 store it as an array of 16 bit integers.
@@ -320,9 +317,9 @@ B101
 ### Enclosure
 
 This is the first time I've tried to design any kind of enclosure. I started by
-picking a material on Ponoko for lasercutting. Once I knew what I was working
+picking a material on Ponoko for laser-cutting. Once I knew what I was working
 with I began creating panels in [Sketchup](http://www.sketchup.com/) and tried
-to make a box that would fit the circuit board and accomodate 16 buttons.
+to make a box that would fit the circuit board and accommodate 16 buttons.
 
 [{% img /images/lights_out/16segment_board_enclosure.png Enclosue Rendering %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:16segment_board_enclosure.png)
 
@@ -336,7 +333,7 @@ the angle brackets in sketchup so I could have the screw holes precut.  One
 thing I should have done is round the corners of each panel. The right angles
 are sharp! I ended up sanding each corner until they were rounded by hand.
 
-After finishing the design I flattened each pannel and arranged it to fit in the
+After finishing the design I flattened each panel and arranged it to fit in the
 Ponoko P3 sized order using the [SVG Sketchup plugin](http://code.google.com/p/sketchup-svg-outline-plugin/downloads/list).
 You can [download the sketchup file](/downloads/16segment_board_enclosure.zip)
 and have a look if you wish.
@@ -345,7 +342,7 @@ and have a look if you wish.
 
 [{% img /images/lights_out/IMG_3864.JPG Display Close Up %}](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3864.JPG)
 
-There are definitley some improvements I can still make. If I were to build this
+There are definitely some improvements I can still make. If I were to build this
 whole thing again from scratch I would make these changes:
 
 * Design a circuit board instead of wire wrapping
@@ -354,7 +351,7 @@ whole thing again from scratch I would make these changes:
 * Better way to fasten the RGB LEDs to the buttons, maybe add additional holes
 in the enclosure.
 * A red contrast filter for the 17 segment characters, they are way too bright.
-* Better button de-bouncing code
+* Better button debouncing code
 
 Thanks for reading! You can find [more pictures at full resolution](https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#/)
 in my dropbox.
