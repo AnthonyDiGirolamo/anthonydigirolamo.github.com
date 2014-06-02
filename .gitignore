@@ -1,8 +1,0 @@
-.bundle
-.DS_Store
-.pygments-cache
-.sass-cache
-_deploy
-vendor
-public
-source
