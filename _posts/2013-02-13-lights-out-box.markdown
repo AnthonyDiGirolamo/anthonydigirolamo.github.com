@@ -4,6 +4,7 @@ title: "Lights Out Arcade Box"
 date: 2013-02-13 14:46
 comments: true
 categories: arduino
+permalink: /blog/2013/02/13/lights-out-box/
 ---
 
 Over the past year I've been working on my first big hardware project. It
