@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lights Out Arcade Box</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <link rel="canonical" href="/arduino/2013/02/13/lights-out-box/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38580803-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">DiGirolamo Knows</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Lights Out Arcade Box</h1>
+    <p class="meta">Feb 13, 2013</p>
+  </header>
+
+  <article class="post-content">
+  <p>Over the past year I’ve been working on my first big hardware project. It
+started as an experiment in powering and controlling led displays. I love the
+blinky lights and wanted something big that would catch the eye.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3852.JPG"><img src="/images/lights_out/IMG_3852.JPG" title="Lights Out" /></a></p>
+
+<p>The end result is a tabletop sized arcade for a 4x4 lights out game similar in
+gameplay to the
+<a href="http://www.jaapsch.net/puzzles/lights.htm#descmini">Mini Lights out Game</a>
+by Tiger Electronics.</p>
+
+<p>Checkout a video demo of the gameplay <a href="https://vimeo.com/59807162">here on vimeo</a>.</p>
+
+<!-- more -->
+
+<p>This project took me a long while to complete due to lack of free time. I began
+when my son turned one year old and finished not long before he turned two. The
+effort paid off though and I’m happy with how it turned out.</p>
+
+<h3 id="parts">Parts</h3>
+
+<p>I took the lego approach while putting this together. Pick powerful components
+and wire them up. Here is a list of every part used and what I paid for it.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$02.50</td>
+      <td> </td>
+      <td><a href="http://shop.evilmadscientist.com/productsmenu/partsmenu/202">5/64 inch Balldriver</a></td>
+    </tr>
+    <tr>
+      <td>$02.85</td>
+      <td> </td>
+      <td><a href="https://www.adafruit.com/products/123">ATMEGA328P</a></td>
+    </tr>
+    <tr>
+      <td>$02.95</td>
+      <td> </td>
+      <td><a href="https://www.adafruit.com/products/732">MCP23017 - i2c 16 input/output port expander</a></td>
+    </tr>
+    <tr>
+      <td>$04.50</td>
+      <td>2</td>
+      <td><a href="http://shop.evilmadscientist.com/productsmenu/partsmenu/422">4xAA Battery Holder</a></td>
+    </tr>
+    <tr>
+      <td>$05.00</td>
+      <td> </td>
+      <td>Various resistors and capacitors mostly 0.1µF</td>
+    </tr>
+    <tr>
+      <td>$05.95</td>
+      <td> </td>
+      <td><a href="http://adafruit.com/products/482">Waterproof Metal On/Off Switch with Green LED Ring</a></td>
+    </tr>
+    <tr>
+      <td>$06.46</td>
+      <td> </td>
+      <td><a href="http://shop.evilmadscientist.com/productsmenu/partsmenu/468-632bscs">6-32 x 3/8 inch Button Socket Cap Head Screw</a></td>
+    </tr>
+    <tr>
+      <td>$06.95</td>
+      <td> </td>
+      <td><a href="https://www.adafruit.com/products/266">Premium Female/Female Jumper Wires - 40 x 6”</a></td>
+    </tr>
+    <tr>
+      <td>$06.99</td>
+      <td> </td>
+      <td><a href="http://www.radioshack.com/product/index.jsp?productId=2103243">Wire-Wrapping Tool</a></td>
+    </tr>
+    <tr>
+      <td>$10.20</td>
+      <td> </td>
+      <td><a href="http://shop.evilmadscientist.com/productsmenu/partsmenu/465-bracket">Right Angle Mounting Bracket</a></td>
+    </tr>
+    <tr>
+      <td>$14.95</td>
+      <td> </td>
+      <td><a href="https://www.adafruit.com/products/284">FTDI Friend + extras - v1.0</a></td>
+    </tr>
+    <tr>
+      <td>$14.95</td>
+      <td> </td>
+      <td><a href="http://www.pololu.com/catalog/product/2110">Pololu Step-Down Voltage Regulator D15V35F5S3</a></td>
+    </tr>
+    <tr>
+      <td>$21.90</td>
+      <td> </td>
+      <td><a href="http://www.ebay.com/itm/10-X-30-ft-Kynar-30-awg-wire-10-Color-4-xbox-v-game-/260623604297">10x30ft of kynar wire</a></td>
+    </tr>
+    <tr>
+      <td>$26.40</td>
+      <td>16</td>
+      <td><a href="http://shop.evilmadscientist.com/productsmenu/partsmenu/232">0.8 inch Alphanumeric Displays</a></td>
+    </tr>
+    <tr>
+      <td>$32.96</td>
+      <td> </td>
+      <td><a href="http://www.ponoko.com/make-and-sell/show-material/72-acrylic-clear">Clear Lasercut Acrylic from Ponoko</a></td>
+    </tr>
+    <tr>
+      <td>$34.18</td>
+      <td> </td>
+      <td><a href="http://www.king-cart.com/phoenixent/product=SOCKETS+WIRE+WRAP+DIP+%2526+SIP/exact_match=exact">Wire wrap sockets</a> Part Numbers: HWS3089, HWS15765, HWS1462</td>
+    </tr>
+    <tr>
+      <td>$39.95</td>
+      <td> </td>
+      <td><a href="https://www.adafruit.com/products/322">12mm Diffused Thin Digital RGB LED Pixels (Strand of 25) - WS2801</a></td>
+    </tr>
+    <tr>
+      <td>$42.56</td>
+      <td>16</td>
+      <td><a href="https://www.adafruit.com/products/471">Arcade Button - 30mm Translucent Clear</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://shop.maximintegrated.com/storefront/searchsample.do?menuitem=Sample&amp;event=SampleSearchLoad">Free Sample</a></td>
+      <td>2</td>
+      <td><a href="http://www.maximintegrated.com/datasheet/index.mvp/id/3410">MAX6954 4-Wire Interfaced, 2.7V to 5.5V LED Display Driver with I/O Expander and Key Scan</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Total: $282.20</p>
+
+<p>Most of these parts are overkill and I’m sure this project could be accomplished
+cheaper and more efficiently. Some parts don’t seem to be available anymore.
+Even so, it has a lot of character and thats what I was going for.</p>
+
+<h3 id="board-layout">Board Layout</h3>
+
+<p>Here you can see the layout of the components. I couldn’t find a through hole
+protoboard that was large enough to accommodate all of the alphanumeric digits so
+I fastened two together and used some legos attached to with screws for
+reinforcement.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3878.JPG"><img src="/images/lights_out/IMG_3878.JPG" title="Board Layout" /></a></p>
+
+<h3 id="the-17-segment-displays">The 17-segment displays</h3>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3863.JPG"><img src="/images/lights_out/IMG_3863.JPG" title="Display Closeup" /></a></p>
+
+<p><img class="right" src="/images/lights_out/MAX6954_Connection_Circuit.png" title="MAX6954 Connection Circuit" /></p>
+
+<p>Below the alphanumeric digits are the MAX6954 drivers. There is one driver per
+row. Next to each driver are decoupling capacitors and a resistor for limiting
+the current to each segment. The diagram to the right details the required
+connections. These are pretty beefy chips. They do a lot and have a built in
+font map that correspond to ASCII character codes. Getting characters to display
+is as simple as sending a string over the SPI connection.</p>
+
+<p>The MAX6954 datasheet claims they are chainable but I was getting garbage on the
+second display when wiring the SPI bus in a chain. It worked much better when
+each chip had it’s own chip select line and I sent commands to both or one at a
+time.</p>
+
+<p>For extra fun I also wanted to see some lowercase characters so I created my own
+font map and displayed it by turning individual segments on and off.</p>
+
+<p><img src="/images/lights_out/lowercase.gif" title="Lowercase Font Animation" /></p>
+
+<p>Connecting each chip to 8 digits was the hardest part of this build.  Wire
+wrapping that many connections took about 6hrs total. Below is the connection
+scheme in a table from the datasheet. The chip uses charlie-plexing to control
+that many segments. Most of the MAX6954 pins are connected to a single segment
+on each digit. Pins 0-7 are connected to two segments.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/zD-R6pwl56#f:MAX6954%20Connections%20for%208%2016-Segment%20Digits.png"><img src="/images/lights_out/MAX6954_Connections_for_8_16-Segment_Digits.png" title="MAX6954 Display Circuit" /></a></p>
+
+<p>Before I began I drew the connections with pencil and paper. I picked different
+colored wire for each row and tested that each point was connected properly
+using a multimeter. Thankfully I didn’t have to repair any connections after
+finishing.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3869.JPG"><img src="/images/lights_out/IMG_3869.JPG" title="Wire wrapped rows of digits" /></a></p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3875.JPG"><img src="/images/lights_out/IMG_3875.JPG" title="Wire wrapped rows of digits close up" /></a></p>
+
+<p>I chose to wire wrap the whole thing because I wasn’t 100% sure how to connect
+everything to start with. Unfortunately I’m lacking a proper circuit schematic.
+Learning how to use Eagle or gEDA is still on my todo list. I was able to get
+away with this because the connections outside of the digits are relatively
+simple and I could rewire anything quickly if needed.</p>
+
+<h3 id="buttons-and-rgb-leds">Buttons and RGB LEDs</h3>
+
+<p>The remaining components include a MCP23017 port expander, 16 buttons and a RGB
+LED strand with 16 pixels for the button grid. I was a bit lazy and decided to
+use the MCP23017 to read the state of each individual button rather than create
+a button array wired to one of the analog inputs of the ATMEGA328P. Each button
+is connected to one pin of the MCP23017 and ground. In the code it’s very simple
+to get the state of each button as a 16 bit unsigned integer.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3860.JPG"><img src="/images/lights_out/IMG_3860.JPG" title="Rainbow colors on the RGB LEDs" /></a></p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3881.JPG"><img src="/images/lights_out/IMG_3881.JPG" title="Button panel removed" /></a></p>
+
+<p>The RGB LED strip is dead simple to use with the <a href="http://learn.adafruit.com/12mm-led-pixels/">tutorial and provided library</a>.
+The strip isn’t arranged in the same order as I was representing the game board
+in the code. To deal with that I store the position of each light on the
+strip in the correct location in an array. I then use bit masking and shifting to determine
+if a single bit in the 16-bit unsigned integer is a 1 and if so set the light to
+on. Here is the loop I use to turn the lights on and off for a given board:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Matrix for solving a given lights out game </span><a href="https://github.com/AnthonyDiGirolamo/lightsout/blob/master/lightsout_02_helper_functions.ino">Source File </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">void</span> <span class="nf">print_board</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">board</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">lit_color</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">  <span class="kt">uint16_t</span> <span class="n">lit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">lit</span> <span class="o">=</span> <span class="p">(</span><span class="n">board</span> <span class="o">&amp;</span> <span class="n">space_masks</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">;</span>
+</span><span class="line">    <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">board_light_index</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="p">(</span><span class="n">lit</span> <span class="o">?</span> <span class="n">lit_color</span> <span class="o">:</span> <span class="n">lights_out_color_schemes</span><span class="p">[</span><span class="n">current_scheme</span><span class="o">+</span><span class="mi">1</span><span class="p">]));</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="color-chooser">Color Chooser</h3>
+
+<p>In addition to the lights out game I wrote up a quick color chooser. With it you
+can increase or decrease the amount of red green and blue and see the hex color
+code. There is also a button to generate a random color and another to start a
+rainbow color rotation if you are in need of a dopamine squirt. Once you have a
+color you like you can save it in the EEPROM and have it used in your next
+lights out game. Checkout <a href="https://vimeo.com/59807162">the demo</a> for an example of how it works.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3861.JPG"><img src="/images/lights_out/IMG_3861.JPG" title="Rainbow colors on the RGB LEDs" /></a></p>
+
+<h3 id="solving-a-game">Solving a Game</h3>
+
+<p>One feature I really wanted was to be able to display the solution to a given
+board. A <a href="http://www.cut-the-knot.org/Curriculum/Games/Merlin4x4.shtml#theory">post on Merlin’s magic square</a> at
+cut-the-knot.org pointed me to an article in Mathematics Magazine, Vol. 74
+<a href="http://www.jstor.org/stable/2691157">An Easy Solution to Mini Lights Out(pp. 57-59) Jennie Missigman and Richard Weida</a>
+The gist of this article points out a few unique properties of 4x4 lights out
+games that are periodic (wrap around).</p>
+
+<ol>
+  <li>Every game is solvable</li>
+  <li>The order of buttons pressed does not matter</li>
+  <li>The solution to any game can be found by multiplying a matrix by a column
+vector that represents the status of the board. 1’s represent lights turned
+on, 0’s off.</li>
+</ol>
+
+<p>Armed with this knowledge I was able to add random levels (which are all
+solvable), a solution function, and the total number of moves required to win.</p>
+
+<p>At first I planned to generate all levels randomly but it turns out that random
+levels are extremely hard to win. They have no patterns that aid in solving. To
+address that I wanted to include the original levels that were part of the
+<a href="http://www.jaapsch.net/puzzles/lights.htm#descmini">Mini Lights out Game</a>.
+You can find them at
+<a href="http://www.jaapsch.net/puzzles/extra/lomini.txt">Mini Lights Out Levels and Solutions</a>
+on
+<a href="http://www.jaapsch.net/puzzles/lightsol.htm#lomini">Jaap’s Puzzle Page</a>.</p>
+
+<h3 id="code">Code</h3>
+
+<p>The <a href="https://github.com/AnthonyDiGirolamo/lightsout">Lights Out Arduino Sketch</a>
+is pretty well organized. I’ve also written a
+<a href="https://github.com/AnthonyDiGirolamo/MAX6954">library for controlling the MAX6954’s</a>.
+which keeps the lights out code simpler.</p>
+
+<p>The sketch is organized into separate files. When compiled in the Arduino IDE
+the files are concatenated and then compiled as a single source file. The
+lights out and color chooser functions are broken out into their own classes.
+All strings and levels are stored in program memory.</p>
+
+<p>Each level, and the state of the board, is represented by a 16-bit unsigned
+integer. Literally 16 1’s or 0’s. This makes it take up very little space. To
+compute a solution for a given board a matrix vector multiplication needs to be
+performed. The 16x16 matrix is composed of only 1’s and 0’s so to save space I
+store it as an array of 16 bit integers.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Matrix for solving a given lights out game </span><a href="https://github.com/AnthonyDiGirolamo/lightsout/blob/master/lightsout_01_vars.ino">Source File </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="c1">// This is a matrix of 1&#39;s and 0&#39;s packed into 16 bit integers</span>
+</span><span class="line"><span class="kt">prog_uint16_t</span> <span class="n">solving_matrix</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="line">  <span class="mh">0xD808</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0xE404</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x7202</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0xB101</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x8D80</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x4E40</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x2720</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x1B10</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x8D8</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x4E4</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x272</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x1B1</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x808D</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x404E</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x2027</span><span class="p">,</span>
+</span><span class="line">  <span class="mh">0x101B</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">// The same matrix but stored as a 16x16 array</span>
+</span><span class="line"><span class="c1">// prog_uint16_t uint16_t matrix_a[16][16] = {</span>
+</span><span class="line"><span class="c1">// {1,1,0,1,1,0,0,0,0,0,0,0,1,0,0,0},</span>
+</span><span class="line"><span class="c1">// {1,1,1,0,0,1,0,0,0,0,0,0,0,1,0,0},</span>
+</span><span class="line"><span class="c1">// {0,1,1,1,0,0,1,0,0,0,0,0,0,0,1,0},</span>
+</span><span class="line"><span class="c1">// {1,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1},</span>
+</span><span class="line"><span class="c1">// {1,0,0,0,1,1,0,1,1,0,0,0,0,0,0,0},</span>
+</span><span class="line"><span class="c1">// {0,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0},</span>
+</span><span class="line"><span class="c1">// {0,0,1,0,0,1,1,1,0,0,1,0,0,0,0,0},</span>
+</span><span class="line"><span class="c1">// {0,0,0,1,1,0,1,1,0,0,0,1,0,0,0,0},</span>
+</span><span class="line"><span class="c1">// {0,0,0,0,1,0,0,0,1,1,0,1,1,0,0,0},</span>
+</span><span class="line"><span class="c1">// {0,0,0,0,0,1,0,0,1,1,1,0,0,1,0,0},</span>
+</span><span class="line"><span class="c1">// {0,0,0,0,0,0,1,0,0,1,1,1,0,0,1,0},</span>
+</span><span class="line"><span class="c1">// {0,0,0,0,0,0,0,1,1,0,1,1,0,0,0,1},</span>
+</span><span class="line"><span class="c1">// {1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,1},</span>
+</span><span class="line"><span class="c1">// {0,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0},</span>
+</span><span class="line"><span class="c1">// {0,0,1,0,0,0,0,0,0,0,1,0,0,1,1,1},</span>
+</span><span class="line"><span class="c1">// {0,0,0,1,0,0,0,0,0,0,0,1,1,0,1,1} }</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Packing the matrix value like this adds a bit of code to the matrix vector
+multiply. It’s still quite readable though. If you are unfamiliar with bitmath
+checkout <a href="http://playground.arduino.cc/Code/BitMath">The Arduino Playground Bit Math Tutorial</a>
+and <a href="http://graphics.stanford.edu/~seander/bithacks.html">Bit Twiddling Hacks</a></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Matrix Vector Multiply </span><a href="https://github.com/AnthonyDiGirolamo/lightsout/blob/master/lightsout_04_lights_out_class.ino">Source File </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">uint16_t</span> <span class="nf">find_solution</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">  <span class="kt">uint16_t</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">solution</span><span class="p">;</span>
+</span><span class="line">  <span class="n">solution</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">16</span><span class="p">;</span> <span class="n">r</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span> <span class="n">c</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">c</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">      <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">solving_matrix</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">space_masks</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">c</span><span class="p">);</span> <span class="c1">// Unpack matrix value</span>
+</span><span class="line">      <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_board</span> <span class="o">&amp;</span> <span class="n">space_masks</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">c</span><span class="p">);</span> <span class="c1">// Unpack level value</span>
+</span><span class="line">      <span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">);</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="n">x</span> <span class="o">%=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class="line">    <span class="n">solution</span> <span class="o">|=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="n">r</span><span class="p">));</span> <span class="c1">// Pack</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">  <span class="k">return</span> <span class="n">solution</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>As a side note, it’s pretty easy to convert number bases in your editor if you
+can filter text through an external program. This is trivial in vim and is
+possible with other editors like TextMate. In vim, I filter the following text
+through <code>bc</code> “An arbitrary precision calculator language” available on almost
+any Linux distribution and MacOSX. The first two lines tell bc to output base 16
+and take base 2 as input (they should be set in that order).</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Base 2 input </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">obase=16;ibase=2
+</span><span class="line">1101100000001000
+</span><span class="line">1110010000000100
+</span><span class="line">0111001000000010
+</span><span class="line">1011000100000001
+</span><span class="line">1000110110000000
+</span><span class="line">0100111001000000
+</span><span class="line">0010011100100000
+</span><span class="line">0001101100010000
+</span><span class="line">0000100011011000
+</span><span class="line">0000010011100100
+</span><span class="line">0000001001110010
+</span><span class="line">0000000110110001
+</span><span class="line">1000000010001101
+</span><span class="line">0100000001001110
+</span><span class="line">0010000000100111
+</span><span class="line">0001000000011011</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>The result, instant base 16 without leaving the editor!</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Base 16 output </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">D808
+</span><span class="line">E404
+</span><span class="line">7202
+</span><span class="line">B101
+</span><span class="line">8D80
+</span><span class="line">4E40
+</span><span class="line">2720
+</span><span class="line">1B10
+</span><span class="line">8D8
+</span><span class="line">4E4
+</span><span class="line">272
+</span><span class="line">1B1
+</span><span class="line">808D
+</span><span class="line">404E
+</span><span class="line">2027
+</span><span class="line">101B</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="enclosure">Enclosure</h3>
+
+<p>This is the first time I’ve tried to design any kind of enclosure. I started by
+picking a material on Ponoko for laser-cutting. Once I knew what I was working
+with I began creating panels in <a href="http://www.sketchup.com/">Sketchup</a> and tried
+to make a box that would fit the circuit board and accommodate 16 buttons.</p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:16segment_board_enclosure.png"><img src="/images/lights_out/16segment_board_enclosure.png" title="Enclosue Rendering" /></a></p>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:16segment_board_enclosure2.png"><img src="/images/lights_out/16segment_board_enclosure2.png" title="Enclosue Rendering 2" /></a></p>
+
+<p>I was aware of the
+<a href="http://support.ponoko.com/entries/20344437-laser-cut-project-box-tutorial">tab in slot method</a>
+for designing an enclosure but by this time I had a lot of project fatigue and
+decided to put put it all together with angle brackets. It was easy to create
+the angle brackets in sketchup so I could have the screw holes precut.  One
+thing I should have done is round the corners of each panel. The right angles
+are sharp! I ended up sanding each corner until they were rounded by hand.</p>
+
+<p>After finishing the design I flattened each panel and arranged it to fit in the
+Ponoko P3 sized order using the <a href="http://code.google.com/p/sketchup-svg-outline-plugin/downloads/list">SVG Sketchup plugin</a>.
+You can <a href="/downloads/16segment_board_enclosure.zip">download the sketchup file</a>
+and have a look if you wish.</p>
+
+<h3 id="improvements">Improvements</h3>
+
+<p><a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#f:IMG_3864.JPG"><img src="/images/lights_out/IMG_3864.JPG" title="Display Close Up" /></a></p>
+
+<p>There are definitely some improvements I can still make. If I were to build this
+whole thing again from scratch I would make these changes:</p>
+
+<ul>
+  <li>Design a circuit board instead of wire wrapping</li>
+  <li>Tab-in-slot method enclosure</li>
+  <li>Better arcade buttons with a more clicky feel</li>
+  <li>Better way to fasten the RGB LEDs to the buttons, maybe add additional holes
+in the enclosure.</li>
+  <li>A red contrast filter for the 17 segment characters, they are way too bright.</li>
+  <li>Better button debouncing code</li>
+</ul>
+
+<p>Thanks for reading! You can find <a href="https://www.dropbox.com/sh/jtv7i2y51uckmn1/6SccJowgE1/Full%20Size#/">more pictures at full resolution</a>
+in my dropbox.</p>
+
+  </article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">DiGirolamo Knows</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>DiGirolamo Knows</li>
+        <li><a href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    </body>
+</html>
