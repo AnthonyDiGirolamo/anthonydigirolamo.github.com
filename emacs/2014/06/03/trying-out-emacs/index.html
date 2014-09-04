@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trying Out Emacs</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A blog about all things on the command line or in the terminal. Also covering hardware hacking with arduinos, raspberry pis and blinky LEDs.">
+    <link rel="canonical" href="/emacs/2014/06/03/trying-out-emacs/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38580803-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+    <script type="text/javascript">
+     (function() {
+       var link_element = document.createElement("link"),
+       s = document.getElementsByTagName("script")[0];
+       if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
+         link_element.href = "http:";
+       }
+       link_element.href += "//fonts.googleapis.com/css?family=Inconsolata:400,700";
+       link_element.rel = "stylesheet";
+       link_element.type = "text/css";
+       s.parentNode.insertBefore(link_element, s);
+     })();
+    </script>
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">DiGirolamo Knows</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Trying Out Emacs</h1>
+    <p class="meta">Jun 3, 2014</p>
+  </header>
+
+  <article class="post-content">
+  <p>Recently I’ve been trying out emacs to see what it’s like on the other side.
+These posts have been a good resource getting started:</p>
+
+<ul>
+  <li><a href="http://bling.github.io/blog/2013/10/16/emacs-as-my-leader-evil-mode/">Emacs as My &lt;Leader&gt;: Evil-mode</a></li>
+  <li><a href="http://bling.github.io/blog/2013/10/27/emacs-as-my-leader-vim-survival-guide/">Emacs as My &lt;Leader&gt;: Vim Survival
+Guide</a></li>
+</ul>
+
+<p>My <code>emacs.d</code> folder is stored <a href="https://github.com/AnthonyDiGirolamo/configs/tree/master/emacs/emacs.d">here</a>.</p>
+
+<p>Here is my <code>~/.emacs.d/init.el</code> file for reference:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (init.el)</span> <a href="/downloads/code/init.el">download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+<span class="line-number">105</span>
+<span class="line-number">106</span>
+<span class="line-number">107</span>
+<span class="line-number">108</span>
+<span class="line-number">109</span>
+<span class="line-number">110</span>
+<span class="line-number">111</span>
+<span class="line-number">112</span>
+<span class="line-number">113</span>
+<span class="line-number">114</span>
+<span class="line-number">115</span>
+<span class="line-number">116</span>
+<span class="line-number">117</span>
+<span class="line-number">118</span>
+<span class="line-number">119</span>
+<span class="line-number">120</span>
+<span class="line-number">121</span>
+<span class="line-number">122</span>
+<span class="line-number">123</span>
+<span class="line-number">124</span>
+<span class="line-number">125</span>
+<span class="line-number">126</span>
+<span class="line-number">127</span>
+<span class="line-number">128</span>
+<span class="line-number">129</span>
+<span class="line-number">130</span>
+<span class="line-number">131</span>
+<span class="line-number">132</span>
+<span class="line-number">133</span>
+<span class="line-number">134</span>
+<span class="line-number">135</span>
+<span class="line-number">136</span>
+<span class="line-number">137</span>
+<span class="line-number">138</span>
+<span class="line-number">139</span>
+<span class="line-number">140</span>
+<span class="line-number">141</span>
+<span class="line-number">142</span>
+<span class="line-number">143</span>
+<span class="line-number">144</span>
+<span class="line-number">145</span>
+<span class="line-number">146</span>
+<span class="line-number">147</span>
+<span class="line-number">148</span>
+<span class="line-number">149</span>
+<span class="line-number">150</span>
+<span class="line-number">151</span>
+<span class="line-number">152</span>
+<span class="line-number">153</span>
+<span class="line-number">154</span>
+<span class="line-number">155</span>
+<span class="line-number">156</span>
+<span class="line-number">157</span>
+<span class="line-number">158</span>
+<span class="line-number">159</span>
+<span class="line-number">160</span>
+<span class="line-number">161</span>
+<span class="line-number">162</span>
+<span class="line-number">163</span>
+<span class="line-number">164</span>
+<span class="line-number">165</span>
+<span class="line-number">166</span>
+<span class="line-number">167</span>
+<span class="line-number">168</span>
+<span class="line-number">169</span>
+<span class="line-number">170</span>
+<span class="line-number">171</span>
+<span class="line-number">172</span>
+<span class="line-number">173</span>
+<span class="line-number">174</span>
+<span class="line-number">175</span>
+<span class="line-number">176</span>
+<span class="line-number">177</span>
+<span class="line-number">178</span>
+<span class="line-number">179</span>
+<span class="line-number">180</span>
+<span class="line-number">181</span>
+<span class="line-number">182</span>
+<span class="line-number">183</span>
+<span class="line-number">184</span>
+<span class="line-number">185</span>
+<span class="line-number">186</span>
+<span class="line-number">187</span>
+<span class="line-number">188</span>
+<span class="line-number">189</span>
+<span class="line-number">190</span>
+<span class="line-number">191</span>
+<span class="line-number">192</span>
+<span class="line-number">193</span>
+<span class="line-number">194</span>
+<span class="line-number">195</span>
+<span class="line-number">196</span>
+<span class="line-number">197</span>
+<span class="line-number">198</span>
+<span class="line-number">199</span>
+<span class="line-number">200</span>
+<span class="line-number">201</span>
+<span class="line-number">202</span>
+<span class="line-number">203</span>
+<span class="line-number">204</span>
+<span class="line-number">205</span>
+<span class="line-number">206</span>
+<span class="line-number">207</span>
+<span class="line-number">208</span>
+<span class="line-number">209</span>
+<span class="line-number">210</span>
+<span class="line-number">211</span>
+<span class="line-number">212</span>
+<span class="line-number">213</span>
+<span class="line-number">214</span>
+<span class="line-number">215</span>
+<span class="line-number">216</span>
+<span class="line-number">217</span>
+<span class="line-number">218</span>
+<span class="line-number">219</span>
+<span class="line-number">220</span>
+<span class="line-number">221</span>
+<span class="line-number">222</span>
+<span class="line-number">223</span>
+<span class="line-number">224</span>
+<span class="line-number">225</span>
+<span class="line-number">226</span>
+<span class="line-number">227</span>
+<span class="line-number">228</span>
+<span class="line-number">229</span>
+<span class="line-number">230</span>
+<span class="line-number">231</span>
+<span class="line-number">232</span>
+<span class="line-number">233</span>
+<span class="line-number">234</span>
+<span class="line-number">235</span>
+<span class="line-number">236</span>
+<span class="line-number">237</span>
+<span class="line-number">238</span>
+<span class="line-number">239</span>
+<span class="line-number">240</span>
+<span class="line-number">241</span>
+<span class="line-number">242</span>
+<span class="line-number">243</span>
+<span class="line-number">244</span>
+<span class="line-number">245</span>
+<span class="line-number">246</span>
+<span class="line-number">247</span>
+<span class="line-number">248</span>
+<span class="line-number">249</span>
+<span class="line-number">250</span>
+<span class="line-number">251</span>
+<span class="line-number">252</span>
+<span class="line-number">253</span>
+<span class="line-number">254</span>
+<span class="line-number">255</span>
+<span class="line-number">256</span>
+<span class="line-number">257</span>
+<span class="line-number">258</span>
+<span class="line-number">259</span>
+<span class="line-number">260</span>
+<span class="line-number">261</span>
+<span class="line-number">262</span>
+<span class="line-number">263</span>
+<span class="line-number">264</span>
+<span class="line-number">265</span>
+<span class="line-number">266</span>
+<span class="line-number">267</span>
+<span class="line-number">268</span>
+<span class="line-number">269</span>
+<span class="line-number">270</span>
+<span class="line-number">271</span>
+<span class="line-number">272</span>
+<span class="line-number">273</span>
+<span class="line-number">274</span>
+<span class="line-number">275</span>
+<span class="line-number">276</span>
+<span class="line-number">277</span>
+<span class="line-number">278</span>
+<span class="line-number">279</span>
+<span class="line-number">280</span>
+<span class="line-number">281</span>
+<span class="line-number">282</span>
+<span class="line-number">283</span>
+<span class="line-number">284</span>
+<span class="line-number">285</span>
+<span class="line-number">286</span>
+<span class="line-number">287</span>
+<span class="line-number">288</span>
+<span class="line-number">289</span>
+<span class="line-number">290</span>
+<span class="line-number">291</span>
+<span class="line-number">292</span>
+<span class="line-number">293</span>
+<span class="line-number">294</span>
+<span class="line-number">295</span>
+<span class="line-number">296</span>
+<span class="line-number">297</span>
+<span class="line-number">298</span>
+<span class="line-number">299</span>
+<span class="line-number">300</span>
+<span class="line-number">301</span>
+<span class="line-number">302</span>
+<span class="line-number">303</span>
+<span class="line-number">304</span>
+</pre></td><td class="code"><pre><code class="lisp"><span class="line"><span class="c1">;; (setq inhibit-startup-message t)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; (require &#39;mouse)</span>
+</span><span class="line"><span class="c1">;; (xterm-mouse-mode t)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">setq-default</span> <span class="nv">fill-column</span> <span class="mi">80</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;default-frame-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">font</span> <span class="o">.</span> <span class="s">&quot;PragmataPro-24&quot;</span> <span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">fboundp</span> <span class="ss">&#39;tool-bar-mode</span><span class="p">)</span> <span class="p">(</span><span class="nv">tool-bar-mode</span> <span class="mi">-1</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">fboundp</span> <span class="ss">&#39;scroll-bar-mode</span><span class="p">)</span> <span class="p">(</span><span class="nv">scroll-bar-mode</span> <span class="mi">-1</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">menu-bar-mode</span> <span class="mi">-1</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Save Tempfiles in a temp dir</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">backup-directory-alist</span> <span class="o">`</span><span class="p">((</span><span class="s">&quot;.*&quot;</span> <span class="o">.</span> <span class="o">,</span><span class="nv">temporary-file-directory</span><span class="p">)))</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">auto-save-file-name-transforms</span> <span class="o">`</span><span class="p">((</span><span class="s">&quot;.*&quot;</span> <span class="o">,</span><span class="nv">temporary-file-directory</span> <span class="no">t</span><span class="p">)))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">defalias</span> <span class="ss">&#39;yes-or-no-p</span> <span class="ss">&#39;y-or-n-p</span><span class="p">)</span> <span class="c1">;; no more typing out y.e.s.</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; (set-default &#39;show-trailing-whitespace t)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;before-save-hook</span> <span class="ss">&#39;delete-trailing-whitespace</span><span class="p">)</span> <span class="c1">;; Erase trailing whitespace before save</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Indentation</span>
+</span><span class="line"><span class="p">(</span><span class="nv">setq-default</span> <span class="nv">c-basic-indent</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">setq-default</span> <span class="nv">tab-width</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1">;; set tw=2</span>
+</span><span class="line"><span class="p">(</span><span class="nv">setq-default</span> <span class="nv">indent-tabs-mode</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; set expandtab</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Save last location in a file</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;saveplace</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">setq-default</span> <span class="nv">save-place</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Scroll just one line when hitting bottom of window</span>
+</span><span class="line"><span class="c1">;; (setq scroll-step 1)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">scroll-conservatively</span> <span class="mi">10000</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Rename file</span>
+</span><span class="line"><span class="c1">;; https://sites.google.com/site/steveyegge2/my-dot-emacs-file</span>
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">rename-file-and-buffer</span> <span class="p">(</span><span class="nv">new-name</span><span class="p">)</span>
+</span><span class="line">  <span class="s">&quot;Renames both current buffer and file it&#39;s visiting to NEW-NAME.&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span> <span class="s">&quot;sNew name: &quot;</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">name</span> <span class="p">(</span><span class="nv">buffer-name</span><span class="p">))</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">filename</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)))</span>
+</span><span class="line">  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">filename</span><span class="p">)</span>
+</span><span class="line">      <span class="p">(</span><span class="nv">message</span> <span class="s">&quot;Buffer &#39;%s&#39; is not visiting a file!&quot;</span> <span class="nv">name</span><span class="p">)</span>
+</span><span class="line">    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">new-name</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">message</span> <span class="s">&quot;A buffer named &#39;%s&#39; already exists!&quot;</span> <span class="nv">new-name</span><span class="p">)</span>
+</span><span class="line">      <span class="p">(</span><span class="k">progn</span>  <span class="p">(</span><span class="nb">rename-file</span> <span class="nv">name</span> <span class="nv">new-name</span> <span class="mi">1</span><span class="p">)</span>  <span class="p">(</span><span class="nv">rename-buffer</span> <span class="nv">new-name</span><span class="p">)</span>  <span class="p">(</span><span class="nv">set-visited-file-name</span> <span class="nv">new-name</span><span class="p">)</span>  <span class="p">(</span><span class="nv">set-buffer-modified-p</span> <span class="no">nil</span><span class="p">))))))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">setenv</span> <span class="s">&quot;ESHELL&quot;</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">&quot;~/Preferences/bin/eshell&quot;</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; MELPA Package Repository</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+</span><span class="line">  <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="o">.</span> <span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; auto-complete</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;auto-complete</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;auto-complete-config</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ac-auto-show-menu</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ac-auto-start</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ac-quick-help-delay</span> <span class="mf">0.3</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ac-quick-help-height</span> <span class="mi">30</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ac-show-menu-immediately-on-auto-complete</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">ac-config-default</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; ;; company-mode</span>
+</span><span class="line"><span class="c1">;; (require &#39;company)</span>
+</span><span class="line"><span class="c1">;; (setq company-idle-delay 0.2)</span>
+</span><span class="line"><span class="c1">;; (setq company-minimum-prefix-length 1)</span>
+</span><span class="line"><span class="c1">;; (setq company-show-numbers t)</span>
+</span><span class="line"><span class="c1">;; (setq company-tooltip-limit 20)</span>
+</span><span class="line"><span class="c1">;; (setq company-dabbrev-downcase nil)</span>
+</span><span class="line"><span class="c1">;; (setq company-dabbrev-ignore-case nil)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-tooltip nil :background &quot;black&quot; :foreground &quot;gray40&quot;)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-tooltip-selection nil :inherit &#39;company-tooltip :background &quot;gray15&quot;)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-preview nil :background &quot;black&quot;)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-preview-common nil :inherit &#39;company-preview :foreground &quot;gray40&quot;)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-scrollbar-bg nil :inherit &#39;company-tooltip :background &quot;gray20&quot;)</span>
+</span><span class="line"><span class="c1">;; (set-face-attribute &#39;company-scrollbar-fg nil :background &quot;gray40&quot;)</span>
+</span><span class="line"><span class="c1">;; (add-hook &#39;after-init-hook &#39;global-company-mode)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Powerline</span>
+</span><span class="line"><span class="c1">; (add-to-list &#39;load-path &quot;~/.emacs.d/powerline&quot;)</span>
+</span><span class="line"><span class="c1">; (require &#39;powerline)</span>
+</span><span class="line"><span class="c1">; (powerline-evil-theme)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Colorschemes</span>
+</span><span class="line"><span class="c1">; (add-to-list &#39;custom-theme-load-path &quot;~/.emacs.d/base16-emacs.git&quot;)</span>
+</span><span class="line"><span class="c1">; (add-to-list &#39;custom-theme-load-path &quot;~/.emacs.d/emacs-color-theme-solarized.git&quot;)</span>
+</span><span class="line"><span class="c1">; (load-theme &#39;base16-eighties t)</span>
+</span><span class="line"><span class="c1">; (load-theme &#39;base16-default t)</span>
+</span><span class="line"><span class="c1">; (load-theme &#39;solarized-dark t)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; moe-theme</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;custom-theme-load-path</span> <span class="s">&quot;~/.emacs.d/moe-theme&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/moe-theme&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;moe-theme</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">moe-dark</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; moe-theme mode-lines (doesn&#39;t support evil)</span>
+</span><span class="line"><span class="c1">;; (setq moe-theme-mode-line-color &#39;purple)</span>
+</span><span class="line"><span class="c1">;; ;; (Available colors: blue, orange, green ,magenta, yellow, purple, red, cyan, w/b.)</span>
+</span><span class="line"><span class="c1">;; (powerline-moe-theme)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;rainbow-delimiters</span><span class="p">)</span>
+</span><span class="line"><span class="c1">;; (global-rainbow-delimiters-mode)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;ruby-mode-hook</span> <span class="ss">&#39;rainbow-delimiters-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;c-mode-common-hook</span> <span class="ss">&#39;rainbow-delimiters-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;python-mode-hook</span> <span class="ss">&#39;rainbow-delimiters-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;shell-mode-hook</span> <span class="ss">&#39;rainbow-delimiters-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;emacs-lisp-mode-hook</span> <span class="ss">&#39;rainbow-delimiters-mode</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; smart-mode-line</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">sml/theme</span> <span class="ss">&#39;dark</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;smart-mode-line</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">sml/setup</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; guide-key</span>
+</span><span class="line"><span class="c1">;; (require &#39;guide-key)</span>
+</span><span class="line"><span class="c1">;; (setq guide-key/guide-key-sequence &#39;(&quot;C-x r&quot; &quot;C-x 4&quot;))</span>
+</span><span class="line"><span class="c1">;; (guide-key-mode 1)  ; Enable guide-key-mode</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ido</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-enable-prefix</span> <span class="no">nil</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-use-virtual-buffers</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-enable-flex-matching</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-create-new-buffer</span> <span class="ss">&#39;always</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-use-filename-at-point</span> <span class="ss">&#39;guess</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">ido-mode</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">ido-everywhere</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">ido-vertical-mode</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;flx-ido</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">flx-ido-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-use-faces</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; disable ido faces to see flx highlights.</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; SMEX</span>
+</span><span class="line"><span class="c1">;; https://github.com/nonsequitur/smex</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;smex</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">smex-initialize</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;M-x&quot;</span><span class="p">)</span> <span class="ss">&#39;smex</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;M-X&quot;</span><span class="p">)</span> <span class="ss">&#39;smex-major-mode-commands</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c C-c M-x&quot;</span><span class="p">)</span> <span class="ss">&#39;execute-extended-command</span><span class="p">)</span> <span class="c1">; old M-x</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Evil (emacs vi layer)</span>
+</span><span class="line"><span class="c1">;; http://www.emacswiki.org/emacs/Evil</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/undo-tree&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/evil&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;evil</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">evil-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Evil Addons</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/evil-surround&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;surround</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-surround-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;web-mode-hook</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+</span><span class="line">                           <span class="p">(</span><span class="nb">push</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">?=</span> <span class="o">.</span> <span class="p">(</span><span class="s">&quot;&lt;%= &quot;</span> <span class="o">.</span> <span class="s">&quot; %&gt;&quot;</span><span class="p">))</span> <span class="nv">surround-pairs-alist</span><span class="p">)</span>
+</span><span class="line">                           <span class="p">(</span><span class="nb">push</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">?-</span> <span class="o">.</span> <span class="p">(</span><span class="s">&quot;&lt;% &quot;</span>  <span class="o">.</span> <span class="s">&quot; %&gt;&quot;</span><span class="p">))</span> <span class="nv">surround-pairs-alist</span><span class="p">)))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/evil-matchit&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;evil-matchit</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-evil-matchit-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/evil-leader&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;evil-leader</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-evil-leader-mode</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Line Bubble Functions</span>
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">move-line-up</span> <span class="p">()</span>
+</span><span class="line">  <span class="s">&quot;move the current line up one line&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">transpose-lines</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">previous-line</span> <span class="mi">2</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">move-line-down</span> <span class="p">()</span>
+</span><span class="line">  <span class="s">&quot;move the current line down one line&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">next-line</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">transpose-lines</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">previous-line</span> <span class="mi">1</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">evil-move-lines</span> <span class="p">(</span><span class="nv">direction</span><span class="p">)</span>
+</span><span class="line">  <span class="s">&quot;move selected lines up or down&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-delete</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">))</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-normal-state</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">equal</span> <span class="nv">direction</span> <span class="s">&quot;up&quot;</span><span class="p">)</span>
+</span><span class="line">    <span class="p">(</span><span class="nv">evil-previous-line</span><span class="p">)</span>
+</span><span class="line">    <span class="p">(</span><span class="nv">evil-next-line</span><span class="p">))</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-move-beginning-of-line</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-paste-before</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-visual-line</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)))))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">evil-move-lines-up</span> <span class="p">()</span>
+</span><span class="line">  <span class="s">&quot;move selected lines up one line&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-move-lines</span> <span class="s">&quot;up&quot;</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nb">defun</span> <span class="nv">evil-move-lines-down</span> <span class="p">()</span>
+</span><span class="line">  <span class="s">&quot;move selected lines down one line&quot;</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-move-lines</span> <span class="s">&quot;down&quot;</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Keybindings</span>
+</span><span class="line"><span class="p">(</span><span class="nv">evil-leader/set-leader</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">evil-leader/set-key</span>
+</span><span class="line">  <span class="s">&quot;e&quot;</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-x C-e&quot;</span><span class="p">)</span>
+</span><span class="line">  <span class="s">&quot;a&quot;</span> <span class="ss">&#39;align-regexp</span>
+</span><span class="line">  <span class="s">&quot;b&quot;</span> <span class="ss">&#39;helm-mini</span>
+</span><span class="line">  <span class="s">&quot;f&quot;</span> <span class="ss">&#39;helm-projectile</span>
+</span><span class="line">  <span class="s">&quot;c&quot;</span> <span class="ss">&#39;evilnc-comment-or-uncomment-lines</span>
+</span><span class="line">  <span class="s">&quot;p&quot;</span> <span class="ss">&#39;evilnc-comment-or-uncomment-paragraphs</span>
+</span><span class="line">  <span class="s">&quot;n&quot;</span> <span class="ss">&#39;rename-file-and-buffer</span>
+</span><span class="line">  <span class="s">&quot;v&quot;</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">evil-edit</span> <span class="nv">user-init-file</span><span class="p">))</span> <span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;SPC SPC&quot;</span><span class="p">)</span> <span class="ss">&#39;helm-M-x</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-p&quot;</span><span class="p">)</span> <span class="ss">&#39;projectile-find-file</span><span class="p">)</span>
+</span><span class="line"><span class="c1">;; (define-key evil-normal-state-map (kbd &quot;C-P&quot;) (lambda() (interactive)</span>
+</span><span class="line"><span class="c1">;;            (projectile-purge-dir-from-cache &quot;.&quot;)</span>
+</span><span class="line"><span class="c1">;;            (projectile-find-file)))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-insert-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="ss">&#39;emmet-expand-line</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-k&quot;</span><span class="p">)</span> <span class="ss">&#39;move-line-up</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="ss">&#39;move-line-down</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-visual-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-k&quot;</span><span class="p">)</span> <span class="ss">&#39;evil-move-lines-up</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-visual-state-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="ss">&#39;evil-move-lines-down</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; evil-nerdcomment</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;c-mode-common-hook</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">comment-start</span> <span class="s">&quot;// &quot;</span> <span class="nv">comment-end</span> <span class="s">&quot;&quot;</span><span class="p">)))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;web-mode-hook</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">comment-start</span> <span class="s">&quot;&lt;!-- &quot;</span> <span class="nv">comment-end</span> <span class="s">&quot; --&gt;&quot;</span><span class="p">)))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; key-chord</span>
+</span><span class="line"><span class="c1">;; http://www.emacswiki.org/emacs/key-chord.el</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;key-chord</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">key-chord-two-keys-delay</span> <span class="mf">0.5</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">key-chord-define</span> <span class="nv">evil-insert-state-map</span> <span class="s">&quot;jj&quot;</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">evil-normal-state</span><span class="p">)</span> <span class="p">(</span><span class="nv">evil-forward-char</span><span class="p">)))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">key-chord-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; helm</span>
+</span><span class="line"><span class="c1">;; https://github.com/emacs-helm/helm</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c h&quot;</span><span class="p">)</span> <span class="ss">&#39;helm-mini</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c f&quot;</span><span class="p">)</span> <span class="ss">&#39;helm-projectile</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Projectile</span>
+</span><span class="line"><span class="c1">;; https://github.com/bbatsov/projectile</span>
+</span><span class="line"><span class="p">(</span><span class="nv">projectile-global-mode</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">projectile-require-project-root</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; use projectile everywhere (no .projectile file needed)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Markdown mode</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/markdown-mode&quot;</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">autoload</span> <span class="ss">&#39;markdown-mode</span> <span class="s">&quot;markdown-mode&quot;</span> <span class="s">&quot;Major mode for editing Markdown files&quot;</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\.text\\&#39;&quot;</span> <span class="o">.</span> <span class="nv">markdown-mode</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\.markdown\\&#39;&quot;</span> <span class="o">.</span> <span class="nv">markdown-mode</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\.md\\&#39;&quot;</span> <span class="o">.</span> <span class="nv">markdown-mode</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Setting rbenv path</span>
+</span><span class="line"><span class="p">(</span><span class="nv">setenv</span> <span class="s">&quot;PATH&quot;</span> <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">&quot;HOME&quot;</span><span class="p">)</span> <span class="s">&quot;/.rbenv/shims:&quot;</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">&quot;HOME&quot;</span><span class="p">)</span> <span class="s">&quot;/.rbenv/bin:&quot;</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">&quot;PATH&quot;</span><span class="p">)))</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">exec-path</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">&quot;HOME&quot;</span><span class="p">)</span> <span class="s">&quot;/.rbenv/shims&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">&quot;HOME&quot;</span><span class="p">)</span> <span class="s">&quot;/.rbenv/bin&quot;</span><span class="p">)</span> <span class="nv">exec-path</span><span class="p">)))</span>
+</span><span class="line"><span class="c1">;; (add-to-list &#39;load-path &quot;~/.emacs.d/xmpfilter&quot;)</span>
+</span><span class="line"><span class="c1">;; (require &#39;rcodetools)</span>
+</span><span class="line"><span class="c1">;; (global-set-key (kbd &quot;C-c C-c&quot;) &#39;xmp)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Web Settings</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;web-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">web-mode-engines-alist</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;liquid&quot;</span> <span class="o">.</span> <span class="s">&quot;\\.html\\&#39;&quot;</span><span class="p">)))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\.erb\\&#39;&quot;</span> <span class="o">.</span> <span class="nv">web-mode</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\.html?\\&#39;&quot;</span> <span class="o">.</span> <span class="nv">web-mode</span><span class="p">))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Python Settings</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;jedi</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;python-mode-hook</span> <span class="ss">&#39;jedi:setup</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">jedi:complete-on-dot</span> <span class="no">t</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Ruby Settings</span>
+</span><span class="line"><span class="p">(</span><span class="k">setq</span> <span class="nv">ruby-deep-indent-paren</span> <span class="no">nil</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;robe</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;ruby-mode-hook</span> <span class="ss">&#39;robe-mode</span><span class="p">)</span>
+</span><span class="line"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;robe-mode-hook</span> <span class="ss">&#39;ac-robe-setup</span><span class="p">)</span>
+</span><span class="line"><span class="c1">;; (push &#39;company-robe company-backends)</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; (eval-after-load &#39;inf-ruby</span>
+</span><span class="line"><span class="c1">;;   `(add-to-list &#39;inf-ruby-implementations &#39;(&quot;bundle console&quot;)))</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">;; Center Screen on search hit</span>
+</span><span class="line"><span class="c1">;; http://bling.github.io/blog/2013/10/27/emacs-as-my-leader-vim-survival-guide/</span>
+</span><span class="line"><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">evil-ex-search-next</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">advice-for-evil-ex-search-next</span> <span class="nv">activate</span><span class="p">)</span>
+</span><span class="line">  <span class="p">(</span><span class="nv">evil-scroll-line-to-center</span> <span class="p">(</span><span class="nv">line-number-at-pos</span><span class="p">)))</span>
+</span><span class="line">
+</span><span class="line"><span class="p">(</span><span class="nv">custom-set-variables</span>
+</span><span class="line"> <span class="c1">;; custom-set-variables was added by Custom.</span>
+</span><span class="line"> <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
+</span><span class="line"> <span class="c1">;; Your init file should contain only one such instance.</span>
+</span><span class="line"> <span class="c1">;; If there is more than one, they won&#39;t work right.</span>
+</span><span class="line"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">sml/active-background-color</span> <span class="s">&quot;color-238&quot;</span><span class="p">)</span>
+</span><span class="line"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">sml/inactive-background-color</span> <span class="s">&quot;color-235&quot;</span><span class="p">))</span>
+</span><span class="line"><span class="p">(</span><span class="nv">custom-set-faces</span>
+</span><span class="line"> <span class="c1">;; custom-set-faces was added by Custom.</span>
+</span><span class="line"> <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
+</span><span class="line"> <span class="c1">;; Your init file should contain only one such instance.</span>
+</span><span class="line"> <span class="c1">;; If there is more than one, they won&#39;t work right.</span>
+</span><span class="line"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">rainbow-delimiters-depth-1-face</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="ss">:foreground</span> <span class="s">&quot;white&quot;</span> <span class="ss">:weight</span> <span class="nv">bold</span><span class="p">))))</span>
+</span><span class="line"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">rainbow-delimiters-depth-8-face</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="ss">:foreground</span> <span class="s">&quot;red&quot;</span> <span class="ss">:weight</span> <span class="nv">bold</span><span class="p">))))</span>
+</span><span class="line"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">sml/prefix</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="ss">:inherit</span> <span class="nv">sml/global</span> <span class="ss">:foreground</span> <span class="s">&quot;color-39&quot;</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+  </article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">DiGirolamo Knows</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>DiGirolamo Knows</li>
+        <li><a href="mailto:anthony.digirolamo@gmail.com">anthony.digirolamo@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/AnthonyDiGirolamo">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">AnthonyDiGirolamo</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/anthonysavatar">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">anthonysavatar</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">A blog about all things on the command line or in the terminal. Also covering hardware hacking with arduinos, raspberry pis and blinky LEDs.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    </body>
+</html>
